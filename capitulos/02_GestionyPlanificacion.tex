@@ -107,13 +107,64 @@ Sprint define todas las funcionalidades requeridas del producto a desarrollar en
 Dado que la mayoría de las practicas de Scrum están centradas en mejorar la productividad de un equipo, se han realizado una serie de adaptaciones teniendo en cuenta las características y circunstancias del proyecto. Se ha prescindido de la reunión diaria, pues el equipo de desarrollo está formado por una única persona. En este caso los sprints tuvieron una duración de inicial de 3 semanas, por lo que en lugar del \textit{Daily meeting} se ha optado por realizar una reunión semanal en la que se comentaba todo lo realizado hasta el momento y todas las actividades pendientes de abordar. Además, la reunión al final de cada sprint se realizó, en su mayoría, únicamente con los tutores y no con el cliente. Sin embargo, se mantuvo comunicación con este constantemente a lo largo de todo el desarrollo.
 
 \subsection{DevOps}
+
+Las antiguas metodologías de desarrollo de software separaban en dos sectores bien diferenciados aquellos que escribían el software (Dpto. Desarrollo) de aquellos que desplegaban en la nube (Dpto. Sistemas) \cite{devops5}.
+
+DevOps surge con la idea de romper esta división y unir en un solo equipo a aquellos que desarrollan software y aquellos que lo despliegan. Esta unión proporciona transparencia a la hora de consultar el estado del producto y las distintas etapas que ha superado o superará.
+
+La filosofía DevOps se basa en los mismos principios que las metodologías ágiles. Sin embargo, con DevOps se quiere fomentar una cultura de equipo, en la que todas las personas que formen el equipo sepan qué está haciendo cada una.
+
 \subsubsection{Características de DevOps}
+Esta filosofía busca la calidad de un producto software, creado por un equipo que se adapte rápido a los cambios e inconvenientes que aparezcan a lo largo de su desarrollo. Estos cambios deben ser identificados con rapidez para su posterior solución.
+
+DevOps engloba todas las buenas prácticas a tener en cuenta a la hora de la entrega, el desarrollo y la administración de aplicaciones a lo largo del ciclo de vida de desarrollo de software: \cite{devops7}
+
+\begin{itemize}
+    \item Desarrollo y revisión de código con la ayuda de un controlador de versiones.
+    \item Uso de herramientas de integración continua
+    \item Continuo testeo del producto para obtener un software de calidad
+    \item Uso de un gestor de repositorio optimizar la descarga y el almacenamiento de archivos binarios utilizados y producidos en el desarrollo de software.
+    \item Uso de un gestor que automatice el proceso de despliegue
+    \item Uso de un gestor de aprovisionamiento que nos cargue las configuraciones que necesarias de nuestro proyecto
+    \item Monitorización del rendimiento de la aplicación
+\end{itemize}
+
 \subsection{Aplicación de DevOps a este proyecto}
+
+Para este proyecto se usará Git \footnote{https://git-scm.com/} como herramienta para el control de versiones y GitHub \footnote{https://github.com/} como servicio público donde almacenar el repositorio de la aplicación.
+
+Es fundamental en este proyecto el desarrollo basado en pruebas y la integración continua en el respositorio. El código debe de estar testeado previamente antes de añadirlo oficialmente al repositorio del mismo si se quiere obtener un software de calidad.
+
+En este proyeco el equipo está formado por una persona, por lo que el mismo equipo será transparente y formado por el sector de desarrollo y el sector de despliegue.
+
+
+\subsection{Combinación de Scrum y DevOps}
+
+Como se ha explicado anteriormente, Scrum nos define un marco para el desarrollo de la aplicación. Un marco donde se definen Sprints para la consecución de objetivos.
+
+Scrum se usará en este proyecto como una estructura que ayude a 
+
+Dentro de cada Sprint, DevOps ayudará a la obtención de esos objetivos gracias a su filosofía, sobre todo su buena práctica relacionada en el desarrollo basado en pruebas, herramientas de automatización para el despliegue y la revisión del código gracias a un controlador de versiones.
+
 \section{Gestión de la configuración}
+En esta sección se define la gestión de la configuración bajo la cual desarrollaremos todas las actividades que impliquen la creación, modificación o eliminación de alguno de los elementos de trabajo que conforman este proyecto, asegurando así que todo lo que concierne al proyecto sea válido durante la vida del mismo.
+
+ Teniendo en cuenta que los elementos de trabajo de este proyecto son los ficheros de código fuente y todos los archivos que conforman la documentación, abordaremos esta sección especificando, de forma independiente, cómo se ha tratado cada tipo de elemento de trabajo.
+ 
 \subsection{Gestión del código}
+
+Para la gestión del código se creará un repositorio local con un  sistema de control de versiones, que a su vez se sincronizará con un repositorio remoto en \textit{GitHub}, y por lo tanto almacenado en la nube. \textit{GitHub} es un servicio web de control de versiones y desarrollo de software basado en \textit{Git}, publicado bajo una Licencia de código abierto. Esta copia remota previene el riesgo de pérdida del código fuente.
+
 \subsection{Gestión de la documentación}
+Para almacenar la documentación de este proyecto se utilizará un repositorio en \textit{GitHub} llamado \textbf{Memoria\_TFG\_GuillermoMuriel} \footnote{https://github.com/guillesiesta/Memoria\_TFG\_GuillermoMuriel}.
+
+Esta plataforma permite la creación de un repositorio cuyo lenguaje principal será LateX, y le añade una licencia de código abierto.
+
+En cuanto a la edición y gestión de la memoria del proyecto, se utilizará la plataforma online \textit{Overleaf v2}\footnote{https://v2.overleaf.com/}. Dispone de control de versiones y edición en concurrencia. De la misma forma, al estar almacenada en la nube, se previene el riesgo de pérdida.
 
 \section{Gestión del tiempo}
+En este apartado se trata la planificación temporal del proyecto y las fases de la misma. Si bien se ha  establecido una planificación inicial, las tareas a realizar se especificarán de forma concreta a medida que se avance en el desarrollo del proyecto en función de los resultados obtenidos tras la finalización de cada sprint.
+
 \subsection{Planificación inicial}
 \subsection{Planificación final}
 

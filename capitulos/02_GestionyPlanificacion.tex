@@ -165,13 +165,91 @@ En cuanto a la edición y gestión de la memoria del proyecto, se utilizará la 
 \section{Gestión del tiempo}
 En este apartado se trata la planificación temporal del proyecto y las fases de la misma. Si bien se ha  establecido una planificación inicial, las tareas a realizar se especificarán de forma concreta a medida que se avance en el desarrollo del proyecto en función de los resultados obtenidos tras la finalización de cada sprint.
 
-\subsection{Planificación inicial}
-\subsection{Planificación final}
+\subsection{Planificación de los sprints}
 
+Teniendo en cuenta la metodología de desarrollo elegida, se ha optado por describir las tareas abordadas en cada sprint y su correspondiente gráfico \textit{Burn-Down}. Los diagramas \textit{Burn-down} son gráficos de dos ejes que se utilizan para representar el avance ideal del proyecto frente al avance real. En el eje X se representa el tiempo y en el eje Y la cantidad de trabajo. Es necesario actualizarlo diariamente. Antes, procederemos a introducir una visión general de los requisitos temporales escogidos sobre la organización del tiempo:
+
+Disponemos de 300 horas para la realización del proyecto.
+
+Para la realización de este proyecto se van a programar 5 sprints de 60 horas de duración cada uno. Por semana se trabajará de lunes a viernes unas 4 horas al día, en total 20 horas a la semana.
+
+En total, se espera que cada sprint dure 3 semanas .
+
+Por lo que el proyecto, salvo imprevisto, debería estar finalizado en torno a las 15 semanas. 
+
+Aproximadamente debería concluir en 4 meses.
+
+\begin{figure}[hbtp]
+\begin{subfigure}{.5\textwidth}
+    \includegraphics[width=\linewidth]{figuras/sprint1.png}
+    \caption{Sprint 1}
+    \label{fig:sprint1}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \includegraphics[width=\linewidth]{figuras/sprint2.png}
+    \caption{Sprint 2}
+    \label{fig:sprint2}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \includegraphics[width=\linewidth]{figuras/sprint3.png}
+    \caption{Sprint 3}
+    \label{fig:sprint3}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \includegraphics[width=\linewidth]{figuras/sprint4.png}
+    \caption{Sprint 4}
+    \label{fig:sprint4}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=.5\linewidth]{figuras/sprint5.png}
+    \caption{Sprint 5}
+    \label{fig:sprint5}
+\end{subfigure}
+\caption{Gráficos \textit{burn-down} de los distintos sprints del proyecto}
+\label{fig:sprints}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Sprint 1}. En esta primera fase determinará la organización temporal y se estudiará la viabilidad del proyecto. Se extraerán los requisitos y a partir de estos se hará un análisis de las tecnologías existentes para poder desarrollar nuestro proyecto y desplegarlo en la nube y, se escogerán cuales serán las herramientas que más se adecúen a las necesidades del proyecto.
+    
+    \item \textbf{Sprint 2}. En esta segunda fase se comenzará a trabajar en el almacenamiento de datos, se extraerá toda la documentación necesaria y se procederá a la construcción de la misma. Nuestra base de datos debe estar organizada, estructurada y desarrollada para que en el siguiente sprint ya pueda ser utilizada.
+    \item \textbf{Sprint 3}. En este sprint se procederá a construir nuestro intermediario entre la interfaz y la base de datos. Lo llamaremos controlador, es decir, nuestra API REST. Además, se implementaran tests que este controlador deberá de superar, así se confirma su correcto funcionamiento antes del montaje final. En esta fase conectaremos nuestro controlador a nuestra base de datos.
+    \item \textbf{Sprint 4}. Esta fase está desarrollada única y enteramente al desarrollo de nuestra interfaz. Se escribirán los tests que deben de ser superados para que nuestra interfaz sea apta para su despliegue.
+    \item \textbf{Sprint 5}. En la fase final se procederá a la unión de nuestra interfaz y nuestro controlador ya unido con la base de datos. A partir de aquí, con nuestro sistema funcionando y testeado, procederemos a desplegarlo usando las tecnologías escogidas previamente. 
+    
+    Una vez la aplicación esté desplegada, se procederá a la redacción de la memoria.
+\end{itemize}
 
 \section{Gestión de riesgos}
+Un riesgo de un proyecto es un evento o condición  que podría tener un efecto positivo o negativo sobre alguno de los recursos u objetivos del proyecto, como podría ser tiempo, coste, alcance o calidad. La gestión de riesgos es un proceso continuo que debe considerar tanto fuentes internas como externas de dichos riesgos. Por norma general, la materialización de un riesgo implica consecuencias negativas, por lo que la gestión de riesgos tiene un papel muy importante dentro de la gestión del proyecto. 
+
+En esta sección se identificarán los posibles riesgos del proyecto, estimando la probabilidad de aparición y su impacto potencial. Posteriormente se definirán las estrategias y pasos a seguir para prevenirlos o minimizar su impacto en caso de que se materialicen.
+
 \subsection{Identificación de riesgos}
-\subsection{Análisis de riesgos}
+\begin{itemize}
+\item \textbf{R001} - No identificar correctamente los requisitos del proyecto.
+\item \textbf{R002} - Dificultad en las tareas de formación.
+\item \textbf{R003} - Aparición de nuevos requisitos.
+\item \textbf{R004} - No conseguir ajustar la planificación a las horas requeridas.
+\item \textbf{R005} - Cambios en la planificación o retrasos en la misma.
+\item \textbf{R006} - Errores eligiendo las tecnologías para el desarrollo del proyecto.
+\item \textbf{R007} - Disponibilidad del experto insuficiente.
+\item \textbf{R008} - La estructura de los datos de partida cambia con el tiempo.
+\item \textbf{R009} - Nulo o deficiente proceso de validación y verificación .
+\item \textbf{R010} - Detección de fallos importantes en el software tras la validación.
+\item \textbf{R011} - Detección de fallos importantes en los resultados tras la validación.
+\item \textbf{R012} - La interfaz no cumple con los requisitos.
+\item \textbf{R013} - La API no cumple con los requisitos.
+\item \textbf{R014} - La base de datos escogida no cumple con los requisitos.
+\item \textbf{R015} - Pérdida de parte del proyecto (documentación o código).
+\item \textbf{R016} - Computador de desarrollo estropeado.
+\item \textbf{R017} - Se sobrepasan los límites de los servicios gratuitos de las plataformas escogidas.
+\item \textbf{R018} - La plataforma GitHub no está disponible.
+\item \textbf{R019} - Las tecnologías usadas cambian de versión durante el proceso de desarrollo.
+\item \textbf{R020} - Problemas de transporte de información entre las tecnologías implementadas.
+\end{itemize}
+
 \subsection{Planificación de la respuesta a los riesgos}
 \subsection{Riesgos materializados}
 

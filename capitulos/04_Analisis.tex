@@ -125,10 +125,67 @@ Nuestra API, por lo tanto estará escrita en Python y se usará el framework \te
 
 \subsubsection{Vista - Interfaz}
 
-Existen infinidad de frameworks y lenguajes a la hora de desarrollar una interfaz web. Con la idea de querer implementar una interfaz que sea interactiva y ligera, se busca un lenguaje que permita el desarrollo de una web básica, con un liguero toque de red social, ya que se busca en todo momento, que el usuario se enganche a la aplicación. Para ello es fundamental el uso de una interfaz simple.
+Existen infinidad de frameworks y lenguajes a la hora de desarrollar una interfaz web. Con la idea de querer implementar una interfaz que sea interactiva y ligera, se busca un lenguaje que permita el desarrollo de una web básica, con un ligero aspecto de red social, ya que se busca en todo momento, que el usuario se enganche a la aplicación. Para ello es fundamental el uso de una interfaz fácil de utilizar.
 
+Para la búsqueda de este framework se ha tenido muy en cuenta, primero que el lenguaje que lo soporte sea sencillo, rápido, muy bien documentado, con muchas librerías adicionales, soportado en el máximo de navegadores y, que se puedan llegar a cumplir todos los requerimientos que la interfaz necesita, como por ejemplo, la capacidad de realizar peticiones HTTP a nuestra API o controlador.
 
+Todos estos motivos nos hacen decantarnos por \textbf{javascript} como el lenguaje principal para esta interfaz. Además, este lenguaje nos proporciona diferentes frameworks para el desarrollo de nuestra interfaz\cite{framework}:
+
+\begin{itemize}
+    \item AngularJS\footnote{https://angularjs.org/}
+    \item ReactJS\footnote{https://reactjs.org/}
+    \item VueJS\footnote{https://vuejs.org/}
+    \item EmberJS\footnote{https://www.emberjs.com/}
+    \item Aurelia\footnote{https://aurelia.io/}
+\end{itemize}
+
+Al estudiar en profundidad las características de cada uno\cite{framework2}. El framework escogido es \textbf{ReactJS}. Este framework tiene la gran ventaja de que está siendo el más usado hoy en día por plataformas tales como Instagram o Facebook. Es más, ReactJS es una librería desarrollada por Facebook, esto quiere decir que tiene un soporte que garantiza una larga vida a largo plazo.
+
+ReactJS tiene como inconveniente la curva de aprendizaje, puede ser un poco costoso al principio, pero gracias a la buena documentación y de los tutoriales a los que podemos acceder a través de la web oficial, todo esto sumado a la gran comunidad que está apareciendo sobre este framework, nos garantizan la alta probabilidad de alcanzar nuestros objetivos en el período de tiempo estimado.
+
+Un framework como ReactJS está basado en la creación de componentes y su reutilización, esto es de gran ayuda pues en nuestra aplicación se intuye que aparecerán distintos datos mostrados en pantalla, pero todo esto apoyado en una misma estructura visual que se mantendrá fija salvo, obviamente, que se solicite la muestra de información específica.
 
 \subsection{Tecnologías de despliegue}
 
-Inicialmente se hará una búsqueda de las distintas tecnologías para el despliegue del bloque, se compararán y se decidirá cual de ellas es la escogida y el por qué.
+Una vez definidas las tecnologías que se usarán para cada bloque de la arquitectura modelo vista controlador. El objetivo será alojar cada uno de éstos en la nube y conectarlos entre sí. 
+
+Existen distintos formas de desplegar en la nube\cite{cloud}\cite{cloud2}\cite{cloud3}\cite{cloud4}:
+
+\begin{itemize}
+    \item Software como Servicio o \textbf{SaaS}. Es un modelo donde el soporte hardware de la infraestructura está gestionado por el proveedor del servicio. El servicio y el software están ya definidos. Los datos los tiene almacenados el  hardware del proveedor del servicio. Un ejemplo de SaaS sería: Dropbox o Gmail.
+    \item Plataforma como Servicio o \textbf{PaaS}. Un PaaS proporciona un entorno cloud donde se puede crear una aplicación, es decir, podemos definir qué tipo de servicio queremos implementar. Por la parte hardware, es el proveedor el que se encarga de los recursos de infraestructura dedicados a ese servicio. Un PaaS está justo encima de la capa de infraestructura, nos proporciona la posibilidad de crear un servicio sin tener que preocuparnos por los recursos hardware que se necesitarán para el correcto funcionamiento del servicio.
+    \item Infraestructura como Servicio o \textbf{IaaS}. Un IaaS es un modelo en el que tenemos la libertad de implementar cualquier servicio, pero con la posibilidad de definir una infraestructura que sustente ese servicio. Se deben de proveer los recursos necesarios para el arranque del servicio.
+\end{itemize}
+
+En esta aplicación se busca la velocidad y la sencillez, sin entrar demasiado en la definición de los recursos hardware a utilizar. Es por ello que un IaaS retrasaría bastante el desarrollo de la aplicación, pues no está contemplado la posibilidad de definir una infraestructura hardware para este proyecto.
+
+Para la realización de este proyecto se usarán PaaS y SaaS.
+
+\subsubsection{Vista - Interfaz}
+
+En el mercado nos podemos encontrar diversos PaaS donde poder alojar y desplegar nuestro servicio, con infinidad de posibilidades para desplegar. En nuestro caso, para  el despliegue de la interfaz se ha usado \textbf{Heroku}\footnote{https://dashboard.heroku.com/}.
+
+Esta plataforma nos ofrece la posibilidad de enlazar nuestro repositorio en GitHub con Heroku y automatizar proceso de despliegue con un simple click.
+
+Es por ello que esta plataforma es la idonea, pues en este proyecto se busca exhaustivamente la automatización de procesos como el despliegue y la comodidad.
+
+\subsubsection{Controlador - API}
+
+Destacando otra vez la facilidad y automatización del despliegue. \textbf{Zeit}\footnote{https://zeit.co/now} nos ofrece una herramienta llamada \textbf{Now} que nos hace increiblemente cómodo el despliegue de nuestra API.
+
+Zeit nos permite desplegar nuestra API de manera automática, con solo un comando: \texttit{now}
+
+Adicionalmente se necesitaría un archivo en el que se especifique el entorno de nuestra aplicación, esto es, por ejemplo:
+
+\begin{itemize}
+    \item Lenguaje utilizado
+    \item Librerias a instalar que utiliza el servicio
+    \item Puerto por el que se transmitirá información. En nuestro caso, solamente realizaremos peticiones HTTP, por lo que el puerto será el 80.
+    \item Localización de nuestro ejecutable y comando para ejecutarlo
+\end{itemize}
+
+\subsubsection{Modelo - Base de datos basada en grafos}
+
+En este apartado no se encuentran tantas alternativas para el despliegue en la nube de una base de datos basada en grafos. La propia documentación de neo4j (nuestra base de datos escogida) nos recomienda \textbf{GrapheneDB}\footnote{https://www.graphenedb.com/} como SaaS donde almacenar nuestra base de datos.
+
+Es una decisión rotundamente acertada. Es muy sencillo el uso para la creación de una base de datos basada en grafos en dicha plataforma.

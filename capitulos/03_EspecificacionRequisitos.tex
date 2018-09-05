@@ -1,5 +1,211 @@
 \chapter{Especificación de Requisitos}
+Los requisitos se pueden definir como aquellas características esperables y/o deseables que debe cumplir un sistema para satisfacer unas necesidades especificas. Esta tarea es imprescindible para asegurar el éxito del proyecto. En esta sección describiremos los requisitos del proyecto desde una perspectiva menos tradicional que encaja mejor con la metodología de desarrollo elegida: historias de usuario. Las historias de usuario describen de forma breve aquello que un determinado usuario (en este caso desarrollador) espera al final del desarrollo. Es necesario que cumplan una serie de características:
+\begin{itemize}
+    \item Deben ser independientes.
+    \item Ser negociables. No actúan como un contrato, sino como una serie de pautas de acción.
+    \item Deben aportar valor al proyecto.
+    \item Se debe poder realizar una estimación sobre ellas (temporal o de carga de trabajo).
+    \item Deben tener un tamaño manejable.
+    \item Deben ser verificables, pues es necesario saber si una historia se ha cumplido.
+\end{itemize}
+
+Cada historia se ha expresado siguiendo el siguiente patrón:
+\begin{center}
+    Como \texttt{<usuario>}, quiero / espero \texttt{<objetivo>}
+\end{center}
+
+Además cada una de ellas se acompaña de una estimación temporal, unos criterios de aceptación, un nivel de importancia y un identificador.
+
+Se distinguirán entre tres tipos de niveles de importancia, según su prioridad.
+\begin{itemize}
+    \item \textbf{Alta} (Cumplimiento obligatorio): la historia es imprescindible para el desarrollo y éxito del proyecto. Es necesario que esté en la versión final para aceptar el proyecto.
+    \item \textbf{Media} (Cumplimiento deseable): es deseable la presencia de esta historia en la versión final del proyecto, pero no supone un aumento significativo del valor del producto.
+    \item \textbf{Baja} (Cumplimiento opcional): su presencia no es crucial para el éxito del proyecto, pero aporta cierto valor funcional. 
+\end{itemize}
+
+Aún cuando el tiempo total de todas las historias de usuario sea mayor al tiempo disponible, no supone un inconveniente, pues las historias se desarrollarán más de una a la vez ya que se solapan y es casi imposible determinar tareas aisladas para el cumplimiento de cada una.
+
+A continuación se especificarán todas las historias de usuario del proyecto teniendo en cuenta el  documento guía \ref{tab:HC-EJEMPLO} para la especificación de historias de usuario.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{Código} - Nombre} \\\hline 
+    \textbf{Descripción}	&  Breve descripción de la historia de usuario. \\\hline
+    \textbf{Estimación}	&	Estimación temporal de la historia. 	\\\hline
+    \textbf{Prioridad}	&	Prioridad según la importancia que tiene esta historia para el desarrollo satisfactorio del proyecto.	\\\hline
+    \textbf{Aceptación}	&	Criterios a cumplir para considerar que esta historia de usuario se ha cubierto satisfactoriamente.		\\\hline
+    \textbf{Notas}		&	Observaciones varias.		\\\hline
+\end{tabular}
+\caption{Documento guía. Especificación de las historias de usuario.}
+\label{tab:HC-EJEMPLO}
+\end{table}
 
 \section{Historias de usuario}
-\subsection{Historias de usuario:Cliente}
-\subsection{Historias de usuario: Desarrollador de software}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-1}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-01} - Login o acceso a la aplicación} \\\hline 	
+    \textbf{Descripción}	& Quiero que el usuario acceda a la plataforma a través de usuario y contraseña
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Alta		\\\hline
+    \textbf{Aceptación}	&	En el caso de que el usuario introduzca correctamente su usuario y contraseña, se accederá a la plataforma	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-2}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-02} - Escribir un acertijo} \\\hline 	
+    \textbf{Descripción}	& Quiero que el usuario sea capaz de escribir un acertijo y subirlo a la plataforma
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Alta		\\\hline
+    \textbf{Aceptación}	&	Cuando el usuario introduzca su acertijo, éste deberá ser accesible en la plataforma	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-3}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-03} - Consulta de propios acertijos} \\\hline 	
+    \textbf{Descripción}	& Quiero que el usuario sea capaz de consultar el estado de sus acertijos
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Media		\\\hline
+    \textbf{Aceptación}	&	Cuando el usuario introduzca su acertijo, éste deberá ser accesible en la plataforma en un apartado en que solamente se muestren los acertijos escritos del usuario	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-4}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-04} - Puntuación de las respuestas de un acertijo} \\\hline 	
+    \textbf{Descripción}	& Quiero que el usuario sea capaz de puntuar las respuestas propuestas por los demás usuarios sobre sus acertijos
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Alta		\\\hline
+    \textbf{Aceptación}	&	Cuando el usuario acceda a las soluciones del acertijo y modifique la puntuación de la solución, ésta deberá ser actualizada al momento.	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-5}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-05} - Actualización del porcentaje del estado de un acertijo } \\\hline 	
+    \textbf{Descripción}	& Quiero que sistema actualice el estado de un acertijo basándose en las puntuaciones obtenidas de las respuestas propuestas al mismo
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Alta		\\\hline
+    \textbf{Aceptación}	&	Cuando el usuario acceda a un acertijo, éste mostrará el estado de resolución en el que se encuentra	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-6}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-06} - Consulta de todas las soluciones propuestas a un acertijo } \\\hline 	
+    \textbf{Descripción}	& Quiero que un usuario al acceder a un acertijo a resolver, tenga la posibilidad de consultar todas las propuestas como solución escritas para el mismo
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Alta		\\\hline
+    \textbf{Aceptación}	&	Al acceder a un acertijo, si éste tiene soluciones, deberán mostrarse en el caso de que el usuario lo solicite 	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-7}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-07} -Modificación de los datos de un usuario } \\\hline 	
+    \textbf{Descripción}	& Quiero que un usuario pueda modificar sus datos
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Baja		\\\hline
+    \textbf{Aceptación}	&	Al acceder a sus datos personales y modificarlos, éstos se actualizarán automáticamente en el sistema 	\\\hline
+    \textbf{Notas}		&	Esta funcionalidad se contemplará única y exclusivamente cuando se disponga de tiempo de más en el sprint correspondiente		\\\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\label{tab:HU-8}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-08} - Adaptabilidad a distintos front-ends } \\\hline 	
+    \textbf{Descripción}	& Quiero que mi aplicación sea adaptable a distintos front-end
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Alta		\\\hline
+    \textbf{Aceptación}	&	La API desarrollada debe de ser accesible desde cualquier lugar y en cualquier momento. Esto es, debe permitir el acceso a peticiones HTTP. 	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-10}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-10} - Interfaz sencilla e intuitiva } \\\hline 	
+    \textbf{Descripción}	& Quiero que mi aplicación sea fácil de usar y atractiva
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Alta		\\\hline
+    \textbf{Aceptación}	&	La interfaz no contendrá excesiva carga de información, y será intuitiva 	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-11}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-11} - Accesibilidad y gestión de los datos } \\\hline 	
+    \textbf{Descripción}	& Quiero que la base de datos de mi aplicación sea sencilla de administrar y que acepte peticiones HTTP de mi API
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Alta		\\\hline
+    \textbf{Aceptación}	&	La base de datos no dispondrá de excesiva complejidad y será accesible, alojándose ésta en la nube 	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\label{tab:HU-12}
+\begin{tabular}{|c|L{10.5cm}|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{HU-12} - Tecnologías usadas libres } \\\hline 	
+    \textbf{Descripción}	& Quiero desarrollar mi aplicación con software libre
+	\\\hline
+    \textbf{Estimación}	&	3 semanas	\\\hline
+    \textbf{Prioridad}	&	Media		\\\hline
+    \textbf{Aceptación}	&	La mayor parte de la aplicación deberá estar desarrollada con software libre 	\\\hline
+    \textbf{Notas}		&			\\\hline
+\end{tabular}
+\end{table}

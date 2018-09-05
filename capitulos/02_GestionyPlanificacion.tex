@@ -104,7 +104,7 @@ Sprint define todas las funcionalidades requeridas del producto a desarrollar en
 \end{enumerate}
 			
 \subsection{Aplicación de Scrum a este proyecto}
-Dado que la mayoría de las practicas de Scrum están centradas en mejorar la productividad de un equipo, se han realizado una serie de adaptaciones teniendo en cuenta las características y circunstancias del proyecto. Se ha prescindido de la reunión diaria, pues el equipo de desarrollo está formado por una única persona. En este caso los sprints tuvieron una duración de inicial de 3 semanas, por lo que en lugar del \textit{Daily meeting} se ha optado por realizar una reunión semanal en la que se comentaba todo lo realizado hasta el momento y todas las actividades pendientes de abordar. Además, la reunión al final de cada sprint se realizó, en su mayoría, únicamente con los tutores y no con el cliente. Sin embargo, se mantuvo comunicación con este constantemente a lo largo de todo el desarrollo.
+Dado que la mayoría de las practicas de Scrum están centradas en mejorar la productividad de un equipo, se han realizado una serie de adaptaciones teniendo en cuenta las características y circunstancias del proyecto. Se ha prescindido de la reunión diaria, pues el equipo de desarrollo está formado por una única persona. En este caso los sprints tuvieron una duración de inicial de 3 semanas, por lo que en lugar del \textit{Daily meeting} se ha optado por realizar una autorreflexión semanal en la que se anotaba todo lo realizado hasta el momento y todas las actividades pendientes de abordar. Además, la reunión al final de cada sprint se realizó con el tutor. Sin embargo, se mantuvo comunicación con éste constantemente a lo largo de todo el desarrollo.
 
 \subsection{DevOps}
 
@@ -142,9 +142,9 @@ En este proyeco el equipo está formado por una persona, por lo que el mismo equ
 
 Como se ha explicado anteriormente, Scrum nos define un marco para el desarrollo de la aplicación. Un marco donde se definen Sprints para la consecución de objetivos.
 
-Scrum se usará en este proyecto como una estructura que ayude a 
+Scrum se usará en este proyecto como una estructura que ayude a organizar y dividir los pasos para la creación de la aplicación, cada división la interpretaremos como un sprint.
 
-Dentro de cada Sprint, DevOps ayudará a la obtención de esos objetivos gracias a su filosofía, sobre todo su buena práctica relacionada en el desarrollo basado en pruebas, herramientas de automatización para el despliegue y la revisión del código gracias a un controlador de versiones.
+Dentro de cada Sprint, DevOps ayudará a la obtención de esos objetivos gracias a su filosofía basada en el uso de buenas prácticas relacionadas con el desarrollo basado en pruebas, herramientas de automatización para el despliegue y la revisión del código gracias a un controlador de versiones.
 
 \section{Gestión de la configuración}
 En esta sección se define la gestión de la configuración bajo la cual desarrollaremos todas las actividades que impliquen la creación, modificación o eliminación de alguno de los elementos de trabajo que conforman este proyecto, asegurando así que todo lo que concierne al proyecto sea válido durante la vida del mismo.
@@ -238,7 +238,7 @@ En esta sección se identificarán los posibles riesgos del proyecto, estimando 
 \item \textbf{R008} - La estructura de los datos de partida cambia con el tiempo.
 \item \textbf{R009} - Nulo o deficiente proceso de validación y verificación .
 \item \textbf{R010} - Detección de fallos importantes en el software tras la validación.
-\item \textbf{R011} - Detección de fallos importantes en los resultados tras la validación.
+\item \textbf{R011} - Detección de fallos importantes en la aplicación tras la validación.
 \item \textbf{R012} - La interfaz no cumple con los requisitos.
 \item \textbf{R013} - La API no cumple con los requisitos.
 \item \textbf{R014} - La base de datos escogida no cumple con los requisitos.
@@ -250,12 +250,94 @@ En esta sección se identificarán los posibles riesgos del proyecto, estimando 
 \item \textbf{R020} - Problemas de transporte de información entre las tecnologías implementadas.
 \end{itemize}
 
-\subsection{Planificación de la respuesta a los riesgos}
 \subsection{Riesgos materializados}
 
-\section{Gestión de costes}
-\subsection{Costes de recursos humanos}
-\subsection{Costes de material}
-\subsection{Costes de indirectos}
-\subsection{Costes total del proyecto}
+El proyecto se realizo de una forma óptima, aún cuando se materializó algún riesgo, por ejemplo, el caso del riesgo \textbf{R020}, al que fue fácil dar respuesta aunque su impacto en el proyecto resultó ser de gran gravedad: en algunos navegadores es necesario implementar una cabecera para habilitar y dar permiso a la aplicación para el acceso a recursos cuando accedemos a alguna API, alojada en un servidor de un dominio distinto (intercambio de datos de origen cruzado), mediante algún tipo de petición a través del protocolo HTTP\cite{cors}.
 
+Este problema se solucionó añadiendo en el controlador o API una librería que añadía una cabecera segura en las peticiones HTTP que se realizaban\cite{corsflask}.
+
+Avanzando acontecimientos, esta librería pertenece a \textit{python}, que es el lenguaje principal en el que hemos escrito nuestra API. Más concretamente, es una extensión de nuestro framework usado\textit{flask-python}, llamada \textit{Flask-CORS}\cite{corsflask2}.
+
+\section{Gestión de costes}
+
+En esta sección se hace una estimación de los costes del proyecto teniendo en cuenta los recursos humanos, los materiales y otros costes indirectos.
+
+\subsection{Costes de recursos humanos}
+
+En primer lugar tendremos en cuenta los costes asociados con el equipo de desarrollo. Dado que este equipo está formado únicamente por una persona, se considerará el rol de Analista Programador.
+
+Según la guía Hays del mercado laboral 2018 \cite{guiahays}, el salario de un analista programador en la zona de Andalucía rondaría los 22.000 \euro brutos anuales.
+
+Para el cálculo total del coste de este recurso se ha hecho uso de la calculadora de contratos de la Universidad de Santiago de Compostela\footnote{\url{http://imaisd.usc.es/ferramentas/calculadora/calculadoracontratos.asp}}. Así pues, teniendo en cuenta el salario mensual, el tiempo que el trabajador estará en el proyecto y el número de horas diarias dedicadas, se calcula el coste total. 
+    \begin{itemize}
+        \item Número de pagas: 14
+        \item Bruto mensual: 1.570,00\euro
+        \item Periodo de contratación: 01-05-2018 al 01-09-2018
+        \item Días semanales: 5
+        \item Categoría: Grado - Ingeniero programador en formación
+        \item Coste total 10.400,59\euro, de los cuales 838,68 son la aportación a la seguridad social.
+    \end{itemize}
+
+\subsection{Costes de material}
+
+Se tendrá en cuenta el ordenador portátil con el que se ha desarrollado el proyecto. Suponiendo que la vida útil de un ordenador son 4 años y el portátil utilizado tiene un coste de 550,00\euro, con un valor residual de 50,00\euro y un coeficiente de amortización lineal del 33,3\% , el coste de amortización viene dado por:
+   \begin{center}
+        (Precio de  compra - Valor residual) x Coeficiente de amortización
+        $(550,00$\euro$ - 50,00$\euro$) \cdot 0,333 = 166,50$\euro   
+    \end{center}
+    Así pues, ponderando este coste por el número de horas del proyecto con respecto al número de horas anuales de uso del portátil (20 horas semanales por 52 semanas), el coste de material atribuido al proyecto es:
+    \begin{center}
+        $166,50$\euro$ x (412.5 / 1040) = 65,95$ \euro 
+    \end{center}
+    
+\subsection{Costes de indirectos}
+
+Son constes indirectos aquellos que no se pueden incluir de forma directa en el proyecto como: facturas de luz, calefacción, internet y demás. Para estimar este coste se tendremos en cuenta las facturas de la localización dónde se ha desarrollado el proyecto. Este total asciende a unos: 100\euro al mes. En total unos 400\euro los 4 meses.
+
+\subsection{Costes de servicios cloud}
+
+Para la realización de este proyecto se han usado 3 tecnologías distintas de almacenamiento en la nube. Al ser un proyecto que está en una fase inicial de desarrollo, se decidió por contratar los planes gratuitos. 
+
+Inicialmente no habrá excesiva demanda en la aplicación. Sin embargo, estos servicios al funcionar bajo demanda, al incrementar los usuarios, peticiones y accesos a la aplicación es importante tener en cuenta los posibles cambios de planes para ajustarnos a la misma. 
+
+Estos cambios podemos observarlos en la tabla \ref{fig::costes}
+
+\begin{figure}\centering[hbtp]
+\begin{subfigure}{.6\textwidth}
+    \includegraphics[width=\linewidth]{figuras/heroku-plan.png}
+    \caption{Planes Heroku Cloud Platform}
+    \label{fig::PlanesHerokuCloudPlatform}
+\end{subfigure}
+
+\begin{subfigure}{.6\textwidth}
+    \includegraphics[width=\linewidth]{figuras/zeit-plan.png}
+    \caption{Planes Zeit Platform}
+    \label{fig::PlanesZeitPlatform}
+\end{subfigure}
+
+\begin{subfigure}{.6\textwidth}
+    \includegraphics[width=\linewidth]{figuras/graphenedb-plan.png}
+    \caption{Planes GrapheneDB Cloud} 
+    \label{fig::PlanesGrapheneDBCloud}
+\end{subfigure}
+\caption{Planes CLoud de los distintos Clouds del proyecto}
+\label{fig::costes}
+\end{figure}
+
+\subsection{Coste total del proyecto}
+
+En la tabla \ref{tab:: tablaCostes} se hace un resumen del coste total del proyecto.
+	\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c|c|}
+	\hline
+	\textbf{Recurso}        & \textbf{Coste total } 	\\\hline
+	Recursos   humanos  	& 10.400,59\euro             \\
+	Recursos   materiales 	& 65,95\euro           		\\
+	Costes   indirectos     & 400\euro      			    \\\hline 
+	\textbf{Total}          & \textbf{	10866,54 \euro} \\     
+	\hline
+	\end{tabular}
+	\caption{Tabla de costes del proyecto}
+	\label{tab:: tablaCostes}
+	\end{table}

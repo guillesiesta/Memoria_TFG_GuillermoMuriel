@@ -259,7 +259,7 @@ Nuestro controlador tendrá los siguientes métodos:
     \item \textbf{soluciones\_por\_titulo()}. Se devuelven de un acertijo todas las soluciones propuestas y su puntuación.
     \item \textbf{enviar\_comentario()}. Se añade en la base de datos la propuesta de solución de un usuario para un acertijo en concreto.
     \item \textbf{enviar\_storie()}. Se añade en la base de datos un acertijo.
-    \item \textbf{cambiar\_puntuacion\_titulo()}. Se modifica en la base de datos la puntuación de una posible solución de un acertijo.
+    \item \textbf{cambiar\_puntuacion\_titulo()}. Se modifica en la base de datos la puntuación de una posible solución de un acertijo. Una vez cambiada la puntuación, se procederá a la actualización del estado del acertijo buscando cual es la mayor puntuación que existe de las soluciones propuestas. Esta puntuación pasará a ser el mayor de puntuación de cualquier propuesta de solución.
     \item \textbf{acertijo\_por\_titulo()}. Se busca en la base de datos el acertijo que coincida con ese título y se devuelve el texto del mismo.
     \item \textbf{storie\_por\_titulo()}. Se busca en la base de datos el acertijo que coincida con ese título y se devuelve la solución del mismo.
     \item \textbf{todo\_por\_titulo()}. Se busca en la base de datos un acertijo a partir de su título y se devuelven todos sus atributos.
@@ -274,4 +274,29 @@ El formato de los datos estará estructurado en JSON\footnote{https://www.json.o
 
 Esto es, en el caso de que desde nuestra interfaz, decidamos añadir nuestro acertijo creado, se enviará en formato JSON los datos al controlador, que extraerá la información relevante de ese JSON y añadirá lo especificado a la base de datos.
 
-Un ejemplo de flujo de datos y pasos a seguir puede ser el ejemplo descrito en el diagrama de secuencia \ref{fig::secuencia}. En este diagrama, se describe el funcionamiento del evento \textit{enviar\_storie()}, en el que un usuario introduce un nuevo acertijo en el sistema.
+Un ejemplo de flujo de datos y pasos a seguir puede ser el ejemplo descrito en los diagramas de secuencia \ref{fig::secuencia}. En estos diagrama, se describe el funcionamiento de los eventos \textit{enviar\_storie(), enviar\_comentario(),}, en el que un usuario introduce un nuevo acertijo en el sistema.
+
+\begin{figure}[hbtp] \centering
+\begin{subfigure}{.6\textwidth}
+     \centerline{\includegraphics[width=11cm]{figuras/enviar_storie.png}}
+    \caption{Diagrama de secuencia del evento enviar_storie()} 
+    \label{fig::enviarstorie}
+\end{subfigure}
+\begin{subfigure}{.6\textwidth}
+     \centerline{\includegraphics[width=11cm]{figuras/enviar_comentario.png}}
+    \caption{Diagrama de secuencia del evento enviar_comentario()} 
+    \label{fig::enviarcomentario}
+\end{subfigure}
+\begin{subfigure}{.6\textwidth}
+     \centerline{\includegraphics[width=11cm]{figuras/acertijo_por_titulo.png}}
+    \caption{Diagrama de secuencia del evento acertijo_por_titulo()} 
+    \label{fig::acertijoportitulo}
+\end{subfigure}
+\begin{subfigure}{.6\textwidth}
+     \centerline{\includegraphics[width=11cm]{figuras/cambiar_puntuacion.png}}
+    \caption{Diagrama de secuencia del evento cambiar_puntuacion()} 
+    \label{fig::cambiarpuntuacion}
+\end{subfigure}
+\caption{Diagramas de flujo de algunos eventos de la aplicación }
+\label{fig::secuencia}
+\end{figure}

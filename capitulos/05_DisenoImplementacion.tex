@@ -279,24 +279,98 @@ Un ejemplo de flujo de datos y pasos a seguir puede ser el ejemplo descrito en l
 \begin{figure}[hbtp] \centering
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=11cm]{figuras/enviar_storie.png}}
-    \caption{Diagrama de secuencia del evento enviar_storie()} 
+    \caption{Diagrama de secuencia del evento enviar\_storie()} 
     \label{fig::enviarstorie}
 \end{subfigure}
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=11cm]{figuras/enviar_comentario.png}}
-    \caption{Diagrama de secuencia del evento enviar_comentario()} 
+    \caption{Diagrama de secuencia del evento enviar\_comentario()} 
     \label{fig::enviarcomentario}
 \end{subfigure}
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=11cm]{figuras/acertijo_por_titulo.png}}
-    \caption{Diagrama de secuencia del evento acertijo_por_titulo()} 
+    \caption{Diagrama de secuencia del evento acertijo\_por\_titulo()} 
     \label{fig::acertijoportitulo}
 \end{subfigure}
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=11cm]{figuras/cambiar_puntuacion.png}}
-    \caption{Diagrama de secuencia del evento cambiar_puntuacion()} 
+    \caption{Diagrama de secuencia del evento cambiar\_puntuacion()} 
     \label{fig::cambiarpuntuacion}
 \end{subfigure}
 \caption{Diagramas de flujo de algunos eventos de la aplicación }
 \label{fig::secuencia}
 \end{figure}
+
+
+\section{Implementación}
+
+Una vez descrito el funcionamiento de la aplicación, el siguiente paso es la implementación. Se distinguen dos fases a la hora de llevar a cabo esta etapa. Seguiremos el orden de una primera fase en la que se desarrolla la aplicación en nuestra computadora local y otra segunda, en la que se desarrollan los automatismos necesarios para el despliegue de la aplicación creada en local.
+
+\subsection{Implementación en local}
+
+Para la implementación de la aplicación en local se han implementado los 3 bloques de una manera independiente. Comenzando por la instalación de nuestra base de datos, siguiendo por la creación de nuestra api y la conexión con la anterior, hasta la creación de nuestra interfaz.
+
+\subsubsection{Base de datos}
+
+Procedemos a instalar nuestra base de datos neo4j siguiendo el tutorial oficial. Y ya tendríamos nuestra base de datos en la dirección localhost://7474, asignada por defecto\cite{neo4jinstall}.
+
+\subsubsection{API}
+
+Para la creación de la API REST, se ha usado Flask, y se ha implementado este servicio de una manera cómoda y sencilla. Simplemente ejecutando el comando \textit{python nuestraapi.py} arranca el servicio local, accesible por el puerto 5000\cite{flaskinstall}.
+
+\subsubsection{Interfaz}
+
+Para el desarrollo de la interfaz hemos seguido el tutorial oficial para el inicio y la instalación de ReactJS. Este proceso se deberá arrancar y por defecto se situará en local en el puerto 3000.
+
+\subsubsection{Conectando interfaz, controlador y modelo}
+
+Una vez desarrollada cada bloque, es necesario establecer una conexión para crear el cauce por donde fluirá la información.
+
+Para ello, en nuestra API debemos establecer primero la conexión mediante las claves ofrecidas por la base de datos\cite{connectflaskneo4j}.
+
+Una vez conectemos, debemos instalar la librerya py2neo\footnote{https://py2neo.org/v4/} que, recomendada por la documentación oficial de neo4j, nos ayudará a la hora de hacer consultas y establecer la conexión con la base de datos.
+
+Una vez esté el back-end conectado entre sí (API+Neo4j), procederemos a conectarlo con la interfaz.
+
+De nuestro lado, tenemos la ventaja de que javascript (nuestro lenguaje oficial para la interfaz) dispone de una función \textit{fetch}\footnote{https://developer.mozilla.org/es/docs/Web/API/Fetch\_API/Utilizando\_Fetch}, que se encargará de realizar las peticiones HTTP a nuestra API. 
+
+\subsection{Implementación en la nube}
+
+A la hora de implementar en la nube, seguiremos el mismo orden que en local. 
+
+\subsubsection{Base de datos}
+
+Nos damos de alta en la plataforma GrapheneDB\footnote{https://www.graphenedb.com/}. Previamente exportada nuestra base de datos en local (en el caso de que queramos mantener la información) nos procedemos a la creación de una nueva base de datos en GrapheneDB. Una vez creada restauramos la nueva creación con los datos exportados de la base de datos en local\cite{graphenedb}.
+
+Siguiendo estos sencillos pasos, ya tendríamos nuestra base de datos desplegada en la nube.
+
+
+\subsubsection{API}
+
+Para el despliegue de nuestra API en la plataforma Zeit\footnote{https://zeit.co/} necesitamos especificar que entorno será en el que nuestra API se construirá. Para ello, es necesario crear dos archivos:
+
+\begin{itemize}
+    \item \textbf{requirements.txt}\footnote{https://github.com/guillesiesta/ProjectX/blob/master/requirements.txt}. Este archivo define un entorno mediante el cual nuestra aplicación podrá ejecutar python.
+    
+    \item \textbf{Dockerfile}\footnote{https://github.com/guillesiesta/ProjectX/blob/master/Dockerfile}. Este archivo, nos definirá un entorno en el cual Zeit podrá crear un contenedor donde alojar nuestro servicio.
+\end{itemize}
+
+Una vez creados estos archivos, debemos comunicar en nuestra API que dejará de comunicarse por el puerto 5000 y pasará a comunicarse por el puerto 80. Para ello, habrá que añadir la siguiente línea al final del documento: \textit{app.run(host='0.0.0.0', port=80)}.
+
+Una vez efectuados los cambios, ejecutamos desde el directorio de nuestra aplicación el comando: \textit{now} y comenzará automáticamente el despliegue. 
+
+Zeit crea nombres de dominio aleatorios, en este caso el nombre de dominio, es decir, nuestra API o servicio estará desplegada en el dominio: \textbf{https://projectx-wvueafqhpp.now.sh/}
+
+\subsubsection{Interfaz}
+
+Para el despliegue en Heroku de nuestra interfaz tenemos que, primero instalar su cliente en local\cite{heroku}.
+
+Antes, del despliegue, es necesario cambiar la dirección de todas las funciones \textit{fetch}, pues nuestra API ahora está alojada en la nube, y es la que queremos usar.
+
+Una vez realicazos los cambios correspondientes e instalado el cliente, lo usaremos para añadir nuestro repositorio local a los repositorios de heroku\cite{heroku2}. 
+
+Por último, procederemos al despliegue de la interfaz con el comando: \textit{heroku create}.
+
+Automáticamente se nos desplegará una aplicación, a la que desde el panel principal de heroku se le podrá modificar el nombre, pero no la extensión que le añade heroku por defecto. Para tener un dominio propio se debería de escoger otro plan que no fuera gratuito.
+
+La dirección oficial y, también la cconfirmación de que nuestra aplicación está alojada en la nube es: \textbf{https://riddling.herokuapp.com/}

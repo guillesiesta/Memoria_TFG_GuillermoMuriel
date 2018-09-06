@@ -1,0 +1,35 @@
+\chapter{Diseño e Implementación}
+
+\section{Arquitectura Cliente-Servidor}
+
+El proyecto en general está basado en la arquitectura cliente-servidor\cite{clienteservidor}. Esta arquitectura define dos roles principales que se reparten tareas de demanda y respuesta, éstos respectivamente son:
+
+\begin{itemize}
+    \item Cliente
+    \item Servidor
+\end{itemize}
+
+Esta separación se produce en nuestro proyecto cuando distinguimos entre front-end (cliente) y nuestro back-end (servidor).
+
+Nuestra interfaz haría las funciones de cliente, sería la demandante de información y nuestra API junto con la base de datos sería nuestro servidor y encargado de procesar las peticiones y responder de manera adecuada a la petición original.
+
+Con esta disposición disponemos de la ventaja que al tener bien diferenciado el back-end, nuestra aplicación será adaptable a cualquier tipo de front-end.
+
+La función de mantenimiento es mucho más fácil de llevar a cabo en este tipo de arquitecturas, pues si aparece algún problema en la parte de interfaz, se puede corregir sin que la corrección aplicada altere el funcionamiento de nuestro back-end o API.
+
+\subsection{Arquitectura Cliente-Servidor y Modelo Vista Controlador}
+
+Estas dos arquitecturas no son incompatibles, en este proyecto se han diferenciado basándonos en el MVC 3 bloques distintos con funciones asignadas: vista, controlador y modelo. 
+
+Una vez desarrollados esos bloques, la arquitectura cliente servidor engloba en un solo bloque, llamado servidor a los bloques: controlador y modelo. La función que esta arquitectura entiende por servidor es la que se realizaría gracias a la unión de estos dos bloques.
+
+\section{Diseño}
+
+El diseño es un proceso que permite construir una representación abstracta del software de forma que se puedan conocer aspectos como la arquitectura, funcionalidades o la calidad antes de comenzar la codificación. Además, permite detectar problemas en etapas muy tempranas del proyecto, ahorrando costes y reduciendo la presencia de riesgos. En Scrum el diseño del software es continuo y se actualiza en cada sprint.
+
+A continuación se mencionan algunos aspectos del diseño de la aplicación que resultan interesantes o relevantes para el correcto funcionamiento.
+
+\subsection{Representación de los datos}
+\subsection{Determinación del contenido}
+\subsection{Módulo de gestión conversacional}
+\subsection{Paquetes}

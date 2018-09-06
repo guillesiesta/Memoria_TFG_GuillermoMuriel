@@ -1,9 +1,9 @@
 \chapter{Análisis}
 En este capítulo se aborda la fase de análisis de los distintos requerimientos  del sistema para cumplir con los objetivos del proyecto. Tanto los acertijos, las soluciones propuestas a ellos y la puntuación de cada solución son datos que son introducidos por los usuarios. El sistema tiene que ser capaz de poder permitir esa interacción de una manera sencilla e intuitiva.
 
-En primer lugar se abordarán las cuestiones relativas al funcionamiento de la aplicación y, a partir de ahí se definirá la arquitectura mediante la cual la aplicación podrá desarrollarse.
+En primer lugar se abordarán las cuestiones relativas al funcionamiento de la aplicación y, a partir de ahí, se definirá la arquitectura mediante la cual la aplicación podrá desarrollarse.
 
-Una vez definida la arquitectura hará una búsqueda exhaustiva de las distintas tecnologías existentes que ayuden a cumplir los requisitos específicos de cada módulo que la forma y, la elección de la adecuada para el desarrollo de la aplicación.
+Una vez definida la arquitectura, se hará una búsqueda exhaustiva de las distintas tecnologías existentes que ayuden a cumplir los requisitos específicos de cada módulo que la forma, así pues se justificará la elección de la tecnología más adecuada para el desarrollo de la aplicación.
 
 Por último, abordaremos el despliegue de la aplicación. Una vez más, se procederá a hacer una búsqueda exhaustiva de las distintas tecnologías que permitirán el despliegue en la nube de cada uno de nuestros módulos diferenciados. Una vez estén definidas, se procederá a la elección de aquella alternativa que nos solucione y complete nuestros requisitos.
 
@@ -11,18 +11,18 @@ Por último, abordaremos el despliegue de la aplicación. Una vez más, se proce
 
 La aplicación se presentará al usuario como una web actual en la que habrá que introducir usuario y contraseña para acceder. 
 
-Desde el punto de vista del usuario, una vez dentro de la aplicación, se presentarán todos los acertijos del sistema, pues el objetivo principal es que el usuario comience a interactuar. Por ello, es fundamental que en cualquier momento el usuario pueda:
+Desde el punto de vista del usuario, una vez dentro de la aplicación se presentarán todos los acertijos del sistema, pues el objetivo principal es que el usuario comience a interactuar. Por ello, es fundamental que en cualquier momento el usuario pueda:
 
 \begin{itemize}
-    \item Proponer un acertijo para compartir con los demás usuarios
-    \item Acceder a sus acertijos para consultar su estado
-    \item Puntuar las soluciones propuestas a sus acertijos
-    \item Proponer soluciones a cualquier acertijo del sistema
+    \item Proponer un acertijo para compartir con los demás usuarios.
+    \item Acceder a sus acertijos para consultar su estado.
+    \item Puntuar las soluciones propuestas a sus acertijos.
+    \item Proponer soluciones a cualquier acertijo del sistema.
 \end{itemize}
 
 Desde el punto de vista del sistema, para conseguir materializar las funciones básicas a llevar a cabo por un usuario y, aún más importante, la gestión de las mismas por un servicio que sea adaptable a cualquier tipo de interfaz, será necesario el desarrollo de una API REST, que actúe como intermediario entre la interfaz y la base de datos.
 
-Aún dentro del sistema, es necesario el almacenamiento de toda esa información, que será usada por el usuario continuamente, en una base de datos intuitiva, actual y sencilla de manejar.
+Aún dentro del sistema, es necesario el almacenamiento de toda esa información que será usada por el usuario continuamente en una base de datos intuitiva, actual y sencilla de manejar.
 
 
 \section{Arquitectura Modelo-Vista-Controlador}
@@ -35,23 +35,23 @@ Una vez definido el funcionamiento general de la aplicación, se pueden distingu
     \item Base de datos
 \end{itemize}
  
- La arquitectura \textit{MVC} (Modelo Vista Controlador) es la más adecuada para el desarrollo de este proyecto, ya que nos permite hacer una distinción de 3 bloques independientes que colaborarán entre sí para formar nuestra aplicación\cite{mvc2}\cite{mvc3}. Esta arquitectura distingue los bloques\cite{mvc1}:
+ La arquitectura \textit{MVC} (Modelo Vista Controlador) es la más adecuada para el desarrollo de este proyecto, ya que nos permite hacer una distinción de tres bloques independientes que colaborarán entre sí para formar nuestra aplicación\cite{mvc2}\cite{mvc3}. Esta arquitectura distingue los bloques\cite{mvc1}:
  
  \begin{itemize}
     \item \textbf{Vista}. En este bloque es donde se representan los datos con los que el sistema operará. En nuestro caso, es nuestra interfaz.
     \item \textbf{Controlador}. Este bloque será el responsable de responder a los distintos eventos en los que se solicite algún tipo de consulta al modelo, o los que se necesite un transporte de información desde el modelo a la interfaz o viceversa. En nuestro caso, será nuestra API.
     \item \textbf{Modelo}. En este bloque se definirá el tipo de datos y su almacenamiento lógico. En nuestro caso, será nuestra base de datos.
 \end{itemize}
-
-Cada bloque de nuestra arquitectura se abordará de manera independiente, teniendo muy en cuenta, que éstos, una vez definidos y desarrollados, tendrán que estar conectados para así permitir el flujo de información correspondiente a los eventos por parte de los requisitos del usuario. 
-
-En la imagen \ref{fig::mvc} se pueden contemplar los 3 bloques que forman la arquitectura MVC.
-
-\begin{figure}
+\begin{figure}[htbp]
     \centerline{\includegraphics[width=11cm]{figuras/mvc.png}}
     \caption{Arquitectua Modelo-Vista-Controlador}
     \label{fig::mvc}
 \end{figure}
+Cada bloque de nuestra arquitectura se abordará de manera independiente, teniendo muy en cuenta, que éstos, una vez definidos y desarrollados, tendrán que estar conectados para así permitir el flujo de información correspondiente a los eventos por parte de los requisitos del usuario. 
+
+En la imagen \ref{fig::mvc} se pueden contemplar los tres bloques que forman la arquitectura MVC.
+
+
  
 \section{Tecnologías a emplear}
 
@@ -63,7 +63,7 @@ Inicialmente se hará una búsqueda de las distintas tecnologías para el desarr
 
 \subsubsection{Modelo - Base de Datos}
 
-En el mercado podemos encontrar 2 tipos distintos de bases de datos: relacionales y no relacionales\cite{tipobd}. 
+En el mercado podemos encontrar dos tipos distintos de bases de datos: relacionales y no relacionales\cite{tipobd}. 
 
 Para el desarrollo de nuestro proyecto, estamos buscando una base de datos que sea intuitiva y sencilla de administrar. Es fundamental encontrar una base de datos que administre eficientemente unos datos de una manera distinta a la visión de "tabla" que nos ofrecen las bases de datos relacionales. Es por ello que se ha escogido una base de datos \textbf{no relacional} para el almacenamiento de los datos de la aplicación.
 
@@ -79,7 +79,7 @@ Dentro de las bases de datos no relacionales encontramos distintos tipos:
     \item Bases de datos de arrays
 \end{itemize}
 
-Ante esta abrumadora lista de alternativas, el tutor recomendó que se usaran bases de datos orientadas en grafos. Este tipo no relacional de bases de datos está en auge, y se planea que para un futuro no muy lejano sea el tipo de base de datos más usado\cite{bdnorel1}\cite{bdnorel2}. 
+Ante esta abrumadora lista de alternativas, el tutor recomendó que se usaran\textbf{ bases de datos orientadas en grafos}. Este tipo no relacional de bases de datos está en auge y se planea que para un futuro no muy lejano sea el tipo de base de datos más usado\cite{bdnorel1}\cite{bdnorel2}. 
 
 Dentro de las bases de datos basadas en grafos se pueden encontrar dos de las más solicitadas:
 
@@ -88,9 +88,8 @@ Dentro de las bases de datos basadas en grafos se pueden encontrar dos de las m�
     \item titan\footnote{http://titan.thinkaurelius.com/}
 \end{itemize}
 
-Para nuestra base de datos buscamos la sencillez, la simplicidad y el uso de un único proceso que actúe como servidor e interfaz gráfica de una base de datos intuitiva. La facilidad de instalación y manejo de \textbf{neo4j} la han convertido en la candidata ideal para nuestra aplicación. 
 
-Además de la facilidad a la hora de conectar con cualquier API y escalar conforme el tamaño de la base de datos aumente, hacer copias de seguridad en local y, sobre todo, la aparición de \textit{cypher} como lenguaje de consulta\cite{neovstitan}.
+Para nuestra base de datos buscamos la sencillez, la simplicidad y el uso de un único proceso que actúe como servidor e interfaz gráfica de una base de datos intuitiva. La facilidad de instalación y manejo de \textbf{neo4j} la han convertido en la candidata ideal para nuestra aplicación.  Además es importante tener en cuenta la facilidad a la hora de conectar con cualquier API y escalar conforme el tamaño de la base de datos aumente, la posibilidad de hacer copias de seguridad en local y, sobre todo, la aparición de \textit{cypher} como lenguaje de consulta\cite{neovstitan}.
 
 Gracias al inmejorable\textit{online training} y la perfecta descripción de la documentación oficial de neo4j\footnote{https://neo4j.com/graphacademy/online-training/} el aprendizaje de este concepto nuevo de bases de datos y su lenguaje de consulta ha sido un proceso sencillo de llevar a cabo.
 
@@ -108,20 +107,20 @@ Para que nuestra API sea sencilla de implementar, usando un lenguaje simple, de 
     \item Ruby
 \end{itemize}
 
-Ante estas alternativas, todas son válidas y reúnen la documentación necesaria para desarrollar el proyecto. Es por ello, por lo que para tomar esta decisión me basaré en que en durante estos años en el Grado en Ingeniería Informática de la UGR, el lenguaje que menos he usado en clase, y que es completamente desconocido para mi es \textit{python}. 
+Ante estas alternativas, todas son válidas y reúnen la documentación necesaria para desarrollar el proyecto. Es por ello, por lo que para tomar esta decisión se tendrá en cuenta la formación  práctica durante el Grado en Ingeniería Informática de la UGR. En esta línea, se ha seleccionado \textbf{\textit{python} }, pues es un lenguaje en el que, desde el punto de vista personal, se tiene menos soltura en comparación con otros, con lo que optar por desarrollar este proyecto en este lenguaje supone una gran oportunidad para desarrollar nuevas aptitudes y habilidades.
 
-Además, tengo de mi lado que es un lenguaje que está convirtiéndose en uno de los lenguajes más utilizados en la plataforma líder en software libre GitHub\footnote{https://octoverse.github.com/} y, uno de los requisitos a tener muy en cuenta en el desarrollo del proyecto es la utilización de tecnologías actuales.
+Además, \textit{python} es un lenguaje que se está convirtiendo en uno de los más utilizados en la plataforma líder en software libre GitHub\footnote{https://octoverse.github.com/}, con lo que además se abordaría uno de los requisitos a tener en cuenta en el desarrollo del proyecto: la utilización de tecnologías actuales.
 
-Una vez decidido el lenguaje, existen dos alternativas bien diferenciadas a la hora de crear un servicio web en python:
+Una vez decidido el lenguaje, existen dos alternativas bien diferenciadas a la hora de crear un servicio web en \textit{python}:
 
 \begin{itemize}
     \item Flask\footnote{http://flask.pocoo.org/}
     \item Django\footnote{https://www.djangoproject.com/}
 \end{itemize}
 
-Una vez estudiadas las características principales de cada alternativa\cite{flaskvsdjango1} y puesto que nuestra aplicación necesitará de un gestor ligero, que contenga solamente métodos que se llamarán desde nuestra interfaz e interactúen con la base de datos, descartamos la opción de usar Django, pues éste es demasiado pesado y tiene añadida la gran dificultad de comprender la estructura con la que funciona, justo lo contrario que Flask, una herramienta simple de entender y que con poco tiempo de estudio se es apto para desarrollar una API que cumpla los requisitos de nuestra aplicación. 
+Una vez estudiadas las características principales de cada alternativa\cite{flaskvsdjango1} , y puesto que nuestra aplicación necesitará de un gestor ligero que contenga solamente métodos que se llamarán desde nuestra interfaz e interactúen con la base de datos, descartamos la opción de usar Django, pues éste es demasiado pesado y tiene añadida la gran dificultad de comprender la estructura con la que funciona. Est es justo lo contrario que Flask, una herramienta simple de entender y que con poco tiempo de estudio se es apto para desarrollar una API que cumpla los requisitos de nuestra aplicación. 
 
-Nuestra API, por lo tanto estará escrita en Python y se usará el framework \textbf{Flask}.
+Nuestra API, por lo tanto estará escrita en \textit{Python} y se usará el framework \textbf{Flask}.
 
 \subsubsection{Vista - Interfaz}
 
@@ -173,7 +172,7 @@ Es por ello que esta plataforma es la idonea, pues en este proyecto se busca exh
 
 Destacando otra vez la facilidad y automatización del despliegue. \textbf{Zeit}\footnote{https://zeit.co/now} nos ofrece una herramienta llamada \textbf{Now} que nos hace increiblemente cómodo el despliegue de nuestra API.
 
-Zeit nos permite desplegar nuestra API de manera automática, con solo un comando: \texttit{now}
+Zeit nos permite desplegar nuestra API de manera automática, con solo un comando: \textit{now}
 
 Adicionalmente se necesitaría un archivo en el que se especifique el entorno de nuestra aplicación, esto es, por ejemplo:
 

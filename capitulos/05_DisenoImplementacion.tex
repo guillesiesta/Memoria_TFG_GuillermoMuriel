@@ -2,27 +2,27 @@
 
 \section{Arquitectura Cliente-Servidor}
 
-El proyecto en general está basado en la arquitectura cliente-servidor\cite{clienteservidor}. Esta arquitectura, como su nombre indica, define dos roles principales que se reparten tareas de demanda y respuesta: cliente y servidor. Esta separación se produce en nuestro proyecto cuando distinguimos entre front-end (cliente) y nuestro back-end (servidor).
+El proyecto en general está basado en la arquitectura cliente-servidor\cite{clienteservidor}. Esta arquitectura, como su nombre indica, define dos roles principales que se reparten tareas de demanda y respuesta: cliente y servidor. Esta separación se produce en nuestro proyecto cuando distinguimos entre \textit{front-end} (cliente) y nuestro \textit{back-end} (servidor).
 
 Nuestra interfaz haría las funciones de cliente, siendo la demandante de información; por otro lado nuestra API junto con la base de datos tendrían el rol de servidor, encargado de procesar las peticiones y responder de manera adecuada a la petición original.
 
-Con esta disposición se puede destacar la ventaja de que al tener bien diferenciado el back-end, nuestra aplicación será adaptable a cualquier tipo de front-end. Además, la función de mantenimiento es mucho más fácil de llevar a cabo en este tipo de arquitecturas, pues si aparece algún problema en la parte de interfaz, se puede corregir sin que la modificación aplicada altere el funcionamiento de nuestro back-end o API.
+Con esta disposición se puede destacar la ventaja de que al tener bien diferenciado el \textit{back-end}, nuestra aplicación será adaptable a cualquier tipo de \textit{front-end}. Además, la función de mantenimiento es mucho más fácil de llevar a cabo en este tipo de arquitecturas, pues si aparece algún problema en la parte de interfaz, se puede corregir sin que la modificación aplicada altere el funcionamiento de nuestro \textit{back-end} o API.
 
-\subsection{Arquitectura Cliente-Servidor y Modelo Vista Controlador}
+\subsection{Arquitectura Cliente-Servidor y Modelo-Vista-Controlador}
 
-Aún cuando estas dos arquitecturas no son incompatibles, tal y como se ha comentado en la sección \ref{sec::arquitecturaMVC}, en este proyecto se han diferenciado tres bloques distintos, basados en el MVC, con funciones asignadas: vista, controlador y modelo. 
+Aún cuando estas dos arquitecturas no son incompatibles, tal y como se ha comentado en la sección \ref{sec::arquitecturaMVC}, en este proyecto se han diferenciado tres bloques distintos, basados en el \textit{MVC}, con funciones asignadas: vista, controlador y modelo. 
 
 Una vez desarrollados esos bloques, la arquitectura cliente-servidor se engloba en un solo bloque, llamando servidor a los bloques: controlador y modelo. La función que esta arquitectura entiende por servidor es la que se realizaría gracias a la unión de estos dos bloques.
 
 \section{Diseño}
 
-El diseño es un proceso que permite construir una representación abstracta del software de forma que se puedan conocer aspectos como la arquitectura, funcionalidades o la calidad antes de comenzar la codificación. Además, permite detectar problemas en etapas muy tempranas del proyecto, ahorrando costes y reduciendo la presencia de riesgos. En Scrum el diseño del software es continuo y se actualiza en cada sprint.
+El diseño es un proceso que permite construir una representación abstracta del software de forma que se puedan conocer aspectos como la arquitectura, funcionalidades o la calidad antes de comenzar la codificación. Además, permite detectar problemas en etapas muy tempranas del proyecto, ahorrando costes y reduciendo la presencia de riesgos. En SCRUM el diseño del software es continuo y se actualiza en cada \textit{sprint}.
 
 A continuación se mencionan algunos aspectos del diseño de la aplicación que resultan interesantes o relevantes para el correcto funcionamiento.
 
 \subsection{Representación de los datos}
 
-Los datos serán representados en nuestro bloque o módulo que actuará como vista. Para ello, como ya describimos en sección \ref{sec::analisis_vistaInterfaz}, lo desarrollaremos usando el framework ReactJS.
+Los datos serán representados en nuestro bloque o módulo que actuará como vista. Para ello, como ya describimos en sección \ref{sec::analisis_vistaInterfaz}, lo desarrollaremos usando el \textit{framework} ReactJS.
 
 Los datos tienen que mostrarse en una interfaz que sea sencilla de usar, intuitiva y que se adapte a todo tipo de navegadores. Para la elección del aspecto de la misma, es necesaria la búsqueda de inspiración. Por lo que la interfaz de la aplicación Instagram\footnote{https://www.instagram.com/?hl=es} ha sido considerada como modelo a seguir. Observando esta interfaz en la figura \ref{fig::insta}, se puede comprobar que, en cualquier momento, un usuario tiene la posibilidad de cambiar la vista general gracias a los 4 botones que contiene en el extremo inferior de la pantalla. Esta funcionalidad, será clave a la hora de buscar una plantilla que ayude para el inicio del desarrollo de nuestra interfaz pues en nuestro diseño será fundamental que el usuario tenga la posibilidad de desplazarse por los distintos apartados de la aplicación siempre que lo necesite.
 
@@ -32,7 +32,7 @@ Los datos tienen que mostrarse en una interfaz que sea sencilla de usar, intuiti
     \label{fig::insta}
 \end{figure}
 
-La idea principal es la reutilización de código con licencia de código abierto. Gracias a la comunidad de software libre, se ha encontrado una interfaz que relacione la idea descrita anteriormente junto con un diseño sencillo e intuitivo. Esta plantilla se llama \textit{adminLTE}\footnote{https://github.com/almasaeed2010/AdminLTE}, está liberada bajo la licencia de software libre \textit{MIT}\footnote{https://github.com/almasaeed2010/AdminLTE/blob/master/LICENSE} y se encuentra alojada en la plataforma GitHub.
+La idea principal es la reutilización de código con licencia de código abierto. Gracias a la comunidad de software libre, se ha encontrado una interfaz que relacione la idea descrita anteriormente junto con un diseño sencillo e intuitivo. Esta plantilla se llama \textbf{adminLTE}\footnote{https://github.com/almasaeed2010/AdminLTE}, está liberada bajo la licencia de software libre \textit{MIT}\footnote{https://github.com/almasaeed2010/AdminLTE/blob/master/LICENSE} y se encuentra alojada en la plataforma GitHub.
 
 Gracias al uso de la misma, se ha podido desarrollar una interfaz sencilla de desarrollar y agradable a la vista. En la imagen \ref{fig::rid} se puede observar como se ha desarrollado una interfaz en la que un usuario puede, en cualquier momento, cambiar el contenido de la vista principal.
 
@@ -44,7 +44,7 @@ Gracias al uso de la misma, se ha podido desarrollar una interfaz sencilla de de
 
 \subsubsection{ReactJS y sus componentes}
 
-ReactJS es un framework que se basa en la reutilización de componentes. Un componente es cualquier estructura definida en la que se mostrará información. Cada componente se comporta como una instancia de una clase, por lo que cada uno de ellos tiene sus atributos definidos.
+ReactJS es un \textit{framework} que se basa en la reutilización de componentes. Un componente es cualquier estructura definida en la que se mostrará información. Cada componente se comporta como una instancia de una clase, por lo que cada uno de ellos tiene sus atributos definidos.
 
 El procedimiento a seguir para la creación de la vista consiste en el diseño y desarrollo de las 4 vistas iniciales que dispondrá nuestra aplicación:
 
@@ -87,15 +87,15 @@ El procedimiento a seguir para la creación de la vista consiste en el diseño y
 Una vez definidas las vistas, éstas contendrán distintos tipos de componentes que interactuarán entre ellos para poder realizar las funciones descritas en los requisitos de nuestra aplicación. Estos componentes se dividen en:
 
 \begin{itemize}
-    \item \textbf{Header}. En este componente encontramos la cabecera de la aplicación. Contiene un botón que al pulsarlo contrae hacia la izquierda el menú Sidebar. Está siempre renderizado.
+    \item \textbf{Header}. En este componente encontramos la cabecera de la aplicación. Contiene un botón que al pulsarlo contrae hacia la izquierda el menú \textit{Sidebar}. Está siempre renderizado.
     \item \textbf{Sidebar}. Este componente es el encargado de seleccionar qué vista es la que queremos escoger y visualizar. Este componente se encuentra siempre accesible.
     \item \textbf{FormLogin}. El componente inicial que nos permite acceder a la plataforma mediante un usuario y una contraseña.
-    \item \textbf{SmallRiddle}. Es un componente que resume el título del acertijo y la descripción del mismo. Tenemos la posibilidad de acceder a él para así cargar el componente Riddle.
+    \item \textbf{SmallRiddle}. Es un componente que resume el título del acertijo y la descripción del mismo. Tenemos la posibilidad de acceder a él para así cargar el componente \textit{Riddle}.
     \item \textbf{Riddle}. Muestra todos los datos del acertijo, a excepción de la solución. Este componente nos permite observar el estado en el que se encuentra el acertijo, la descripción del mismo, y las tres valiosas pistas que nos ayudarán a resolverlo.
     
     Como funcionalidad adicional, este componente puede cargar todas las soluciones propuestas de ese acertijo  por los usuarios y el porcentaje de cercanía con respecto a la solución final.
     \item \textbf{Solución}. Componente que muestra el texto de la propuesta como solución de un acertijo y la puntuación otorgada por el creador del acertijo.
-    \item \textbf{SolucionConCheck}. Este componente muestra la solución de un acertijo en concreto, y tiene la posibilidad de poder establecer una puntuación con respecto al porcentaje de cercanía a la solución del acertijo. Este componente se renderiza únicamente en la vista TusAcertijosView.
+    \item \textbf{SolucionConCheck}. Este componente muestra la solución de un acertijo en concreto, y tiene la posibilidad de poder establecer una puntuación con respecto al porcentaje de cercanía a la solución del acertijo. Este componente se renderiza únicamente en la vista \textit{TusAcertijosView}.
 \end{itemize}
 
 En la figura \ref{fig::componentes} se puede observar el aspecto de cada uno de los componentes descritos.
@@ -178,7 +178,7 @@ En la base de datos se almacenarán los siguientes atributos por nodo usuario:
 
 
 \subsubsection{Atributos del acertijo}
-En la base de datos se almacenarán los siguientes atributos por nodo storie:
+En la base de datos se almacenarán los siguientes atributos por nodo Storie:
 
 \begin{itemize}
     \item \textbf{Título}.
@@ -216,7 +216,7 @@ Neo4j nos ofrece la posibilidad de poder añadir atributos a las relaciones. Est
 
 \subsubsection{Conclusión sobre el modelado de grafos y su consulta}
 
-Como se puede observar, es realmente intuitiva y sencilla la representación gráfica que este tipo de base de datos nos propone. Sin embargo, más sencillo  en intuitivo es aún el lenguaje \textit{Cypher} necesario para la realización de consultas. Pues éste, con una breve ojeada a su manual de usuario\footnote{https://neo4j.com/docs/developer-manual/current/cypher/}, ya se es capaz de realizar cualquier tipo de consulta necesaria para el funcionamiento de la aplicación. Por ejemplo, en el caso de que necesitásemos extraer de la base de datos todos los acertijos propuestos por el usuario ``aristoteles'', la consulta sería la siguiente:
+Como se puede observar, es realmente intuitiva y sencilla la representación gráfica que este tipo de base de datos nos propone. Sin embargo, más sencillo  en intuitivo es aún el lenguaje Cypher necesario para la realización de consultas. Pues éste, con una breve ojeada a su manual de usuario\footnote{https://neo4j.com/docs/developer-manual/current/cypher/}, ya se es capaz de realizar cualquier tipo de consulta necesaria para el funcionamiento de la aplicación. Por ejemplo, en el caso de que necesitásemos extraer de la base de datos todos los acertijos propuestos por el usuario ``aristoteles'', la consulta sería la siguiente:
 \begin{flushleft}
     \texttt{MATCH (u:Usuario)-[r:Escribe]-(s:Storie)\\ WHERE u.nick=aristoteles\\ RETURN s.storie}
 
@@ -287,7 +287,7 @@ Para la implementación de la aplicación en local se han implementado los tres 
 
 \subsubsection{Base de datos}
 
-Para ello, en primer lugar se ha instalado la base de datos neo4j siguiendo el tutorial oficial. Tras realizar todos los pasos, se podria acceder a la base de datos en la dirección\textit{ localhost://7474}, asignada por defecto\cite{neo4jinstall}.
+Para ello, en primer lugar se ha instalado la base de datos neo4j siguiendo el tutorial oficial. Tras realizar todos los pasos, se podría acceder a la base de datos en la dirección\textit{localhost://7474}, asignada por defecto\cite{neo4jinstall}.
 
 \subsubsection{API}
 
@@ -301,9 +301,9 @@ Para el desarrollo de la interfaz se ha seguido el tutorial oficial para el inic
 
 Una vez desarrollado cada bloque, es necesario establecer una conexión para crear el cauce por donde fluirá la información.
 
-Para ello, en nuestra API se debe establecer primero la conexión mediante las claves ofrecidas por la base de datos\cite{connectflaskneo4j}. Posteriormente, se debe instalar la librería py2neo\footnote{https://py2neo.org/v4/} que, recomendada por la documentación oficial de neo4j, sera de ayuda a la hora de hacer consultas y establecer la conexión con la base de datos.
+Para ello, en nuestra API se debe establecer primero la conexión mediante las claves ofrecidas por la base de datos\cite{connectflaskneo4j}. Posteriormente, se debe instalar la librería Py2neo\footnote{https://py2neo.org/v4/} que, recomendada por la documentación oficial de neo4j, sera de ayuda a la hora de hacer consultas y establecer la conexión con la base de datos.
 
-Una vez esté el back-end conectado entre sí (API+Neo4j), será necesario a conectarlo con la interfaz.
+Una vez esté el \textit{back-end} conectado entre sí (API+Neo4j), será necesario conectarlo con la interfaz.
 
 En este sentido, una de las ventajas de javascript (el lenguaje oficial para la interfaz) es que dispone de una función \textit{fetch}\footnote{https://developer.mozilla.org/es/docs/Web/API/Fetch\_API/Utilizando\_Fetch}, que se encargará de realizar las peticiones HTTP a nuestra API. 
 
@@ -322,14 +322,14 @@ Siguiendo estos sencillos pasos, ya estaría la base de datos desplegada en la n
 Para el despliegue de la API en la plataforma Zeit\footnote{https://zeit.co/} primero es necesario especificar qué entorno se construirá. Para ello, es necesario crear dos archivos:
 
 \begin{itemize}
-    \item \textbf{requirements.txt}\footnote{https://github.com/guillesiesta/ProjectX/blob/master/requirements.txt}. Este archivo define un entorno mediante el cual la aplicación podrá ejecutar python.
+    \item \textbf{requirements.txt}\footnote{https://github.com/guillesiesta/ProjectX/blob/master/requirements.txt}. Este archivo define un entorno mediante el cual la aplicación podrá ejecutar Python.
     
     \item \textbf{Dockerfile}\footnote{https://github.com/guillesiesta/ProjectX/blob/master/Dockerfile}. Este archivo,  define un entorno en el cual Zeit podrá crear un contenedor donde alojar el servicio.
 \end{itemize}
 
 Una vez creados estos archivos, se debe comunicar en la API que dejará de comunicarse por el puerto 5000 y pasará a comunicarse por el puerto 80. Para ello, habrá que añadir la siguiente línea al final del documento: \textit{app.run(host='0.0.0.0', port=80)}.
 
-Una vez efectuados los cambios, se ejecuta desde el directorio de la aplicación el comando: \texttt{now} y comenzará automáticamente el despliegue. 
+Una vez efectuados los cambios, se ejecuta desde el directorio de la aplicación el comando: \texttt{now --public} y comenzará automáticamente el despliegue. 
 
 Zeit crea nombres de dominio aleatorios, en este caso el nombre de dominio, es decir, la API o servicio estará desplegada en el dominio: \textbf{https://projectx-wvueafqhpp.now.sh/}
 

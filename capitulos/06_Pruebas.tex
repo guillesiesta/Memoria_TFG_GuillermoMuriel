@@ -4,11 +4,11 @@ En esta sección se abordarán las distintas tareas relacionadas las diferentes 
 
 \section{Integración continua en el repositorio}
 
-Todas estas pruebas se han ido realizando cada vez que se actualizaba el repositorio del proyecto en GitHub. Para ello, se ha usado \textit{Travis}\footnote{https://travis-ci.org/}, un sistema que permite la integración continua en el repositorio. Una vez enlazado Travis con el repositorio, la realización de test es un proceso automático que se realizará siempre.
+Todas estas pruebas se han ido realizando cada vez que se actualizaba el repositorio del proyecto en GitHub. Para ello, se ha usado Travis\footnote{https://travis-ci.org/}, un sistema que permite la integración continua en el repositorio. Una vez enlazado Travis con el repositorio, la realización de test es un proceso automático que se realizará siempre.
 
 Gracias a esta herramienta libre, se puede comprobar en cualquier momento si el software se encuentra validado o no. En el caso de que el test falle, Travis notifica dónde está el error. 
 
-Travis necesita de un archivo de configuración \textit{.travis.yml}\footnote{https://github.com/guillesiesta/ProjectX/blob/master/.travis.yml} para el arranque, creando una máquina virtual que simulará el sistema y comenzará a examinar los cambios realizados. En este caso concreto, para realizar los tests del  el módulo de la API(python) y de  la interfaz(javascript), es necesario crear el archivo tal y como se muestra en la figura\ref{fig::travis}.
+Travis necesita de un archivo de configuración \textit{.travis.yml}\footnote{https://github.com/guillesiesta/ProjectX/blob/master/.travis.yml} para el arranque, creando una máquina virtual que simulará el sistema y comenzará a examinar los cambios realizados. En este caso concreto, para realizar los tests del  el módulo de la API(Python) y de  la interfaz(Javascript), es necesario crear el archivo tal y como se muestra en la figura\ref{fig::travis}.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=8cm]{figuras/travis.png}}
@@ -16,9 +16,9 @@ Travis necesita de un archivo de configuración \textit{.travis.yml}\footnote{ht
     \label{fig::travis}
 \end{figure}
 
-\section{Pruebas en back-end - API}
+\section{Pruebas en \textit{back-end} - API}
 
-Para el correcto funcionamiento de la API se ha usado la librería \textit{pytest}\footnote{https://docs.pytest.org/en/latest/} y su plugin para flask\footnote{https://pytest-flask.readthedocs.io/en/latest/}.
+Para el correcto funcionamiento de la API se ha usado la librería Pytest\footnote{https://docs.pytest.org/en/latest/} y su plugin para flask\footnote{https://pytest-flask.readthedocs.io/en/latest/}.
 
 Esta herramienta permite la realización de tests unitarios. Para cada función de la API se ha realizado el siguiente testeo:
 
@@ -37,9 +37,9 @@ Esta herramienta permite la realización de tests unitarios. Para cada función 
 
 Se puede acceder al código de todos los tests definidos en el repositorio de GitHub de la aplicación\footnote{https://github.com/guillesiesta/ProjectX/blob/master/stories/test\_storie.py}. 
 
-\section{Pruebas en front-end}
+\section{Pruebas en \textit{front-end}}
 
-Para testear la interfaz se ha usado \textit{Jest}\footnote{https://jestjs.io/} junto con \textit{Enzyme}\footnote{https://github.com/airbnb/enzyme}. Esta recomendación para el testeo viene dada por la propia documentación de ReacJS\cite{testreact}.
+Para testear la interfaz se ha usado Jest\footnote{https://jestjs.io/} junto con Enzyme\footnote{https://github.com/airbnb/enzyme}. Esta recomendación para el testeo viene dada por la propia documentación de ReactJS\cite{testreact}.
 
 La idea principal para las pruebas es comprobar que cada componente creado en ReactJS se renderiza de manera correcta. Para ello gracias a Enzyme, se puede crear un \textit{snapshot} o instantánea de ese componente antes de renderizar, y una vez se renderice, se comprueba que el componente está creado de la manera esperada\cite{testreact2}.
 

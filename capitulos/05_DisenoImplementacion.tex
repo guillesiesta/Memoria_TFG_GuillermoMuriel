@@ -4,9 +4,9 @@
 
 El proyecto en general está basado en la arquitectura cliente-servidor\cite{clienteservidor}. Esta arquitectura, como su nombre indica, define dos roles principales que se reparten tareas de demanda y respuesta: cliente y servidor. Esta separación se produce en nuestro proyecto cuando distinguimos entre \textit{front-end} (cliente) y nuestro \textit{back-end} (servidor).
 
-Nuestra interfaz haría las funciones de cliente, siendo la demandante de información; por otro lado nuestra API junto con la base de datos tendrían el rol de servidor, encargado de procesar las peticiones y responder de manera adecuada a la petición original.
+la interfaz haría las funciones de cliente, siendo la demandante de información; por otro lado la API junto con la base de datos tendrían el rol de servidor, encargado de procesar las peticiones y responder de manera adecuada a la petición original.
 
-Con esta disposición se puede destacar la ventaja de que al tener bien diferenciado el \textit{back-end}, nuestra aplicación será adaptable a cualquier tipo de \textit{front-end}. Además, la función de mantenimiento es mucho más fácil de llevar a cabo en este tipo de arquitecturas, pues si aparece algún problema en la parte de interfaz, se puede corregir sin que la modificación aplicada altere el funcionamiento de nuestro \textit{back-end} o API.
+Con esta disposición se puede destacar la ventaja de que al tener bien diferenciado el \textit{back-end}, la aplicación será adaptable a cualquier tipo de \textit{front-end}. Además, la función de mantenimiento es mucho más fácil de llevar a cabo en este tipo de arquitecturas, pues si aparece algún problema en la parte de interfaz, se puede corregir sin que la modificación aplicada altere el funcionamiento de nuestro \textit{back-end} o API.
 
 \subsection{Arquitectura Cliente-Servidor y Modelo-Vista-Controlador}
 
@@ -24,7 +24,7 @@ A continuación se mencionan algunos aspectos del diseño de la aplicación que 
 
 Los datos serán representados en nuestro bloque o módulo que actuará como vista. Para ello, como ya describimos en sección \ref{sec::analisis_vistaInterfaz}, lo desarrollaremos usando el \textit{framework} ReactJS.
 
-Los datos tienen que mostrarse en una interfaz que sea sencilla de usar, intuitiva y que se adapte a todo tipo de navegadores. Para la elección del aspecto de la misma, es necesaria la búsqueda de inspiración. Por lo que la interfaz de la aplicación Instagram\footnote{https://www.instagram.com/?hl=es} ha sido considerada como modelo a seguir. Observando esta interfaz en la figura \ref{fig::insta}, se puede comprobar que, en cualquier momento, un usuario tiene la posibilidad de cambiar la vista general gracias a los 4 botones que contiene en el extremo inferior de la pantalla. Esta funcionalidad, será clave a la hora de buscar una plantilla que ayude para el inicio del desarrollo de nuestra interfaz pues en nuestro diseño será fundamental que el usuario tenga la posibilidad de desplazarse por los distintos apartados de la aplicación siempre que lo necesite.
+Los datos tienen que mostrarse en una interfaz que sea sencilla de usar, intuitiva y que se adapte a todo tipo de navegadores. Para la elección del aspecto de la misma, es necesaria la búsqueda de inspiración. Por lo que la interfaz de la aplicación Instagram\footnote{https://www.instagram.com/?hl=es} ha sido considerada como modelo a seguir. Observando esta interfaz en la figura \ref{fig::insta}, se puede comprobar que, en cualquier momento, un usuario tiene la posibilidad de cambiar la vista general gracias a los 4 botones que contiene en el extremo inferior de la pantalla. Esta funcionalidad, será clave a la hora de buscar una plantilla que ayude para el inicio del desarrollo de la interfaz pues en nuestro diseño será fundamental que el usuario tenga la posibilidad de desplazarse por los distintos apartados de la aplicación siempre que lo necesite.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=4cm]{figuras/insta.jpg}}
@@ -46,7 +46,7 @@ Gracias al uso de la misma, se ha podido desarrollar una interfaz sencilla de de
 
 ReactJS es un \textit{framework} que se basa en la reutilización de componentes. Un componente es cualquier estructura definida en la que se mostrará información. Cada componente se comporta como una instancia de una clase, por lo que cada uno de ellos tiene sus atributos definidos.
 
-El procedimiento a seguir para la creación de la vista consiste en el diseño y desarrollo de las 4 vistas iniciales que dispondrá nuestra aplicación:
+El procedimiento a seguir para la creación de la vista consiste en el diseño y desarrollo de las 4 vistas iniciales que dispondrá la aplicación:
 
 \begin{itemize}
     \item \textbf{AcertijosView}. En esta sección se mostrarán todas las historias accesibles del sistema. Esta vista contendrá todos los componentes \textit{SmallRiddle} que posteriormente describiremos. Esta vista se puede observar en la figura \ref{fig::acertijosview}.
@@ -58,12 +58,12 @@ El procedimiento a seguir para la creación de la vista consiste en el diseño y
 \begin{figure}[hbtp] \centering
 \begin{subfigure}{.8\textwidth}
     \includegraphics[width=\linewidth]{figuras/riddling.png}
-    \caption{Vista AcertijosView de nuestra aplicación}
+    \caption{Vista AcertijosView de la aplicación}
     \label{fig::acertijosview}
 \end{subfigure}
 \begin{subfigure}{.8\textwidth}
     \includegraphics[width=\linewidth]{figuras/proponerview.png}
-    \caption{Vista ProponerView de nuestra aplicación}
+    \caption{Vista ProponerView de la aplicación}
     \label{fig::proponerview}
 \end{subfigure}
 \caption{Imágenes de las vistas que componen la aplicación}
@@ -73,18 +73,18 @@ El procedimiento a seguir para la creación de la vista consiste en el diseño y
 \centering
 \begin{subfigure}{.8\textwidth}
     \includegraphics[width=\linewidth]{figuras/tusacertijosview.png}
-    \caption{Vista de TusAcertijosView de nuestra aplicación}
+    \caption{Vista de TusAcertijosView de la aplicación}
     \label{fig::tusacertijosview}
 \end{subfigure}
 \begin{subfigure}{.8\textwidth}
     \includegraphics[width=\linewidth]{figuras/editarperfilview.png}
-    \caption{Vista de EditarPerfilView de nuestra aplicación} 
+    \caption{Vista de EditarPerfilView de la aplicación} 
     \label{fig::editarperfilview}
 \end{subfigure}
 \caption{Imágenes de las vistas que componen la aplicación}
 \label{fig::vistas}
 \end{figure}
-Una vez definidas las vistas, éstas contendrán distintos tipos de componentes que interactuarán entre ellos para poder realizar las funciones descritas en los requisitos de nuestra aplicación. Estos componentes se dividen en:
+Una vez definidas las vistas, éstas contendrán distintos tipos de componentes que interactuarán entre ellos para poder realizar las funciones descritas en los requisitos de la aplicación. Estos componentes se dividen en:
 
 \begin{itemize}
     \item \textbf{Header}. En este componente encontramos la cabecera de la aplicación. Contiene un botón que al pulsarlo contrae hacia la izquierda el menú \textit{Sidebar}. Está siempre renderizado.
@@ -103,19 +103,19 @@ En la figura \ref{fig::componentes} se puede observar el aspecto de cada uno de 
 \begin{figure}[hbtp] \centering
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=8cm]{figuras/header.png}}
-    \caption{Componente Header de nuestra aplicación}
+    \caption{Componente Header de la aplicación}
     \label{fig::header}
 \end{subfigure}
 \par\bigskip 
 \begin{subfigure}{.6\textwidth}
     \centerline{\includegraphics[width=5cm]{figuras/sidebar.png}}
-    \caption{Componente Sidebar de nuestra aplicación}
+    \caption{Componente Sidebar de la aplicación}
     \label{fig::sidebar}
 \end{subfigure}
 \par\bigskip 
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=9cm]{figuras/smallriddle.png}}
-    \caption{Componente SmallRiddle de nuestra aplicación}
+    \caption{Componente SmallRiddle de la aplicación}
     \label{fig::smallriddle}
 \end{subfigure}
 \caption{Imágenes de los componentes que componen la aplicación}
@@ -123,19 +123,19 @@ En la figura \ref{fig::componentes} se puede observar el aspecto de cada uno de 
 \begin{figure}[hbtp] \centering \ContinuedFloat
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=9cm]{figuras/riddle.png}}
-    \caption{Componente Riddle de nuestra aplicación} 
+    \caption{Componente Riddle de la aplicación} 
     \label{fig::riddle}
 \end{subfigure}
 \par\bigskip 
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=9cm]{figuras/solucion.png}}
-    \caption{Componente Solución de nuestra aplicación} 
+    \caption{Componente Solución de la aplicación} 
     \label{fig::solucionComponent}
 \end{subfigure}
 \par\bigskip 
 \begin{subfigure}{.6\textwidth}
      \centerline{\includegraphics[width=9cm]{figuras/solucionconcheck.png}}
-    \caption{Componente SoluciónConCheck de nuestra aplicación} 
+    \caption{Componente SoluciónConCheck de la aplicación} 
     \label{fig::solucionconcheck}
 \end{subfigure}
 \caption{Imágenes de los componentes que componen la aplicación}
@@ -161,7 +161,7 @@ Se representan en la base de datos tal y como se muestra en la figura \ref{fig::
     \caption{Nodo Storie} 
     \label{fig::storynode}
 \end{subfigure}
-\caption{Nodos de nuestra base de datos }
+\caption{Nodos de la base de datos }
 \label{fig::nodos}
 \end{figure}
 
@@ -226,7 +226,7 @@ Como se puede observar, es realmente intuitiva y sencilla la representación gr�
 
 Esta aplicación tiene que garantizar que todos los datos enviados y recibidos por los componentes o la base de datos son gestionados de manera adecuada. Es por ello que el controlador implementa una serie de métodos  que aseguran la integridad de los datos y que se invocan desde la interfaz.
 
-Este controlador debe de estar conectado a nuestra base de datos, y tiene que ser apto al recibo de peticiones por parte de la interfaz. Además, deberá limitarse única y exclusivamente a la ejecución de esos métodos, por lo que necesitamos que sea un servicio ligero. Flask nos garantiza todo lo anterior.
+Este controlador debe de estar conectado a la base de datos, y tiene que ser apto al recibo de peticiones por parte de la interfaz. Además, deberá limitarse única y exclusivamente a la ejecución de esos métodos, por lo que necesitamos que sea un servicio ligero. Flask nos garantiza todo lo anterior.
 
 Nuestro controlador tendrá los siguientes métodos:
 
@@ -247,7 +247,7 @@ Nuestro controlador tendrá los siguientes métodos:
 
 El flujo de datos puede ir desde la interfaz hasta la base de datos y viceversa. Para que esto ocurra, se usa el controlador como intermediario. 
 
-El formato de los datos estará estructurado en JSON\footnote{https://www.json.org/}, debido a su alto uso en peticiones y respuestas mediante el protocolo HTTP.  Esto es, en el caso de que desde nuestra interfaz decidamos añadir un acertijo, desde ahí se enviarán en formato JSON todos los datos al controlador, que posteriormente extraerá la información relevante de ese JSON y la añadirá a la base de datos.
+El formato de los datos estará estructurado en JSON\footnote{https://www.json.org/}, debido a su alto uso en peticiones y respuestas mediante el protocolo HTTP.  Esto es, en el caso de que desde la interfaz decidamos añadir un acertijo, desde ahí se enviarán en formato JSON todos los datos al controlador, que posteriormente extraerá la información relevante de ese JSON y la añadirá a la base de datos.
 
 Un ejemplo de flujo de datos y pasos a seguir es el descrito en los diagramas de secuencia de la figura \ref{fig::secuencia}. En estos diagramas se describe el funcionamiento de los eventos \textit{enviar\_storie(), enviar\_comentario(),} en las que un usuario introduce un nuevo acertijo en el sistema.
 
@@ -301,11 +301,11 @@ Para el desarrollo de la interfaz se ha seguido el tutorial oficial para el inic
 
 Una vez desarrollado cada bloque, es necesario establecer una conexión para crear el cauce por donde fluirá la información.
 
-Para ello, en nuestra API se debe establecer primero la conexión mediante las claves ofrecidas por la base de datos\cite{connectflaskneo4j}. Posteriormente, se debe instalar la librería Py2neo\footnote{https://py2neo.org/v4/} que, recomendada por la documentación oficial de neo4j, sera de ayuda a la hora de hacer consultas y establecer la conexión con la base de datos.
+Para ello, en la API se debe establecer primero la conexión mediante las claves ofrecidas por la base de datos\cite{connectflaskneo4j}. Posteriormente, se debe instalar la librería Py2neo\footnote{https://py2neo.org/v4/} que, recomendada por la documentación oficial de neo4j, sera de ayuda a la hora de hacer consultas y establecer la conexión con la base de datos.
 
 Una vez esté el \textit{back-end} conectado entre sí (API+Neo4j), será necesario conectarlo con la interfaz.
 
-En este sentido, una de las ventajas de javascript (el lenguaje oficial para la interfaz) es que dispone de una función \textit{fetch}\footnote{https://developer.mozilla.org/es/docs/Web/API/Fetch\_API/Utilizando\_Fetch}, que se encargará de realizar las peticiones HTTP a nuestra API. 
+En este sentido, una de las ventajas de javascript (el lenguaje oficial para la interfaz) es que dispone de una función \textit{fetch}\footnote{https://developer.mozilla.org/es/docs/Web/API/Fetch\_API/Utilizando\_Fetch}, que se encargará de realizar las peticiones HTTP a la API. 
 
 \subsection{Implementación en la nube}
 

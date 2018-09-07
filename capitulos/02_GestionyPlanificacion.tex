@@ -51,14 +51,14 @@ En el caso concreto de este proyecto, nos encontramos con varios factores import
 \begin{itemize}
     \item Al tratarse de una aplicación que necesita de interfaz, es necesario dedicar tiempo al desarrollo de la misma de una manera independiente a las demás partes. 
     \item En esta aplicación será necesaria la creación de una base de datos donde almacenar todos los acertijos, usuarios y propuestas de solución.
-    \item Al tener que desarrollar una API REST que gestione las peticiones desde nuestra interfaz y nuestra base de datos, será necesario dedicar tiempo para el desarrollo de la misma, no de manera independiente, pues se necesita previamente una conexión de ésta con la base de datos.
+    \item Al tener que desarrollar una API REST que gestione las peticiones desde la interfaz y la base de datos, será necesario dedicar tiempo para el desarrollo de la misma, no de manera independiente, pues se necesita previamente una conexión de ésta con la base de datos.
 \end{itemize}
 
 Por ello, como metodología de desarrollo para mi proyecto lo mejor es crear una mezcla entre la metodología/\textit{framework} SCRUM y la filosofía/práctica DevOps.
 
-El lado SCRUM me aporta la creación de un marco de desarrollo de software con el que obtengo un mayor control y flexibilidad a la hora de enfrentar la incertidumbre, los cambios y los riesgos. Este marco permite realizar modificaciones a la planificación y requisitos de forma controlada y rápida, evitando así que el proyecto fracase por no realizarlos a tiempo. Además, permite que el contacto con el cliente sea mayor y continuo, evitando así que exista demasiada incertidumbre.
+El lado SCRUM aporta la creación de un marco de desarrollo de software con el que se obtiene un mayor control y flexibilidad a la hora de enfrentar la incertidumbre, los cambios y los riesgos. Este marco permite realizar modificaciones a la planificación y requisitos de forma controlada y rápida, evitando así que el proyecto fracase por no realizarlos a tiempo. Además, permite que el contacto con el cliente sea mayor y continuo, evitando así que exista demasiada incertidumbre.
 
-Con la cultura DevOps se me proporciona la idea del desarrollo basado en pruebas \cite{desarrollotests}\cite{desarrollotests2}. Con esto obtengo que para cada entregable existe la garantía de que es un producto de calidad, pues ha pasado previamente todos los tests que describían su funcionalidad.
+Con la cultura DevOps se extrae la idea del desarrollo basado en pruebas \cite{desarrollotests}\cite{desarrollotests2}. Con esto se obtiene que para cada entregable existe la garantía de que es un producto de calidad, pues ha pasado previamente todos los tests que describían su funcionalidad.
 
 \subsection{SCRUM}
 
@@ -122,11 +122,11 @@ DevOps engloba todas las buenas prácticas a tener en cuenta a la hora de la ent
 \begin{itemize}
     \item Desarrollo y revisión de código con la ayuda de un controlador de versiones.
     \item Uso de herramientas de integración continua
-    \item Continuo testeo del producto para obtener un software de calidad
+    \item Continuo \textit{testeo} del producto para obtener un software de calidad.
     \item Uso de un gestor de repositorio optimizar la descarga y el almacenamiento de archivos binarios utilizados y producidos en el desarrollo de software.
     \item Uso de un gestor que automatice el proceso de despliegue
-    \item Uso de un gestor de aprovisionamiento que nos cargue las configuraciones que necesarias de nuestro proyecto
-    \item Monitorización del rendimiento de la aplicación
+    \item Uso de un gestor de aprovisionamiento que nos cargue las configuraciones que necesarias del proyecto.
+    \item Monitorización del rendimiento de la aplicación.
 \end{itemize}
 
 \subsection{Aplicación de DevOps a este proyecto}
@@ -213,12 +213,12 @@ Aproximadamente debería concluir en 4 meses.
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{\textit{Sprint} 1}. En esta primera fase determinará la organización temporal y se estudiará la viabilidad del proyecto. Se extraerán los requisitos y a partir de estos se hará un análisis de las tecnologías existentes para poder desarrollar nuestro proyecto y desplegarlo en la nube y, se escogerán cuales serán las herramientas que más se adecúen a las necesidades del proyecto.
+    \item \textbf{\textit{Sprint} 1}. En esta primera fase determinará la organización temporal y se estudiará la viabilidad del proyecto. Se extraerán los requisitos y a partir de estos se hará un análisis de las tecnologías existentes para poder desarrollar el proyecto y desplegarlo en la nube y, se escogerán cuales serán las herramientas que más se adecúen a las necesidades del proyecto.
     
-    \item \textbf{\textit{Sprint} 2}. En esta segunda fase se comenzará a trabajar en el almacenamiento de datos, se extraerá toda la documentación necesaria y se procederá a la construcción de la misma. Nuestra base de datos debe estar organizada, estructurada y desarrollada para que en el siguiente \textit{sprint} ya pueda ser utilizada.
-    \item \textbf{\textit{Sprint} 3}. En este \textit{sprint} se procederá a construir nuestro intermediario entre la interfaz y la base de datos. Lo llamaremos controlador, es decir, nuestra API REST. Además, se implementaran tests que este controlador deberá de superar, así se confirma su correcto funcionamiento antes del montaje final. En esta fase conectaremos nuestro controlador a nuestra base de datos.
-    \item \textbf{\textit{Sprint} 4}. Esta fase está desarrollada única y enteramente al desarrollo de nuestra interfaz. Se escribirán los tests que deben de ser superados para que nuestra interfaz sea apta para su despliegue.
-    \item \textbf{\textit{Sprint} 5}. En la fase final se procederá a la unión de nuestra interfaz y nuestro controlador ya unido con la base de datos. A partir de aquí, con nuestro sistema funcionando y testeado, procederemos a desplegarlo usando las tecnologías escogidas previamente. 
+    \item \textbf{\textit{Sprint} 2}. En esta segunda fase se comenzará a trabajar en el almacenamiento de datos, se extraerá toda la documentación necesaria y se procederá a la construcción de la misma. La base de datos debe estar organizada, estructurada y desarrollada para que en el siguiente \textit{sprint} ya pueda ser utilizada.
+    \item \textbf{\textit{Sprint} 3}. En este \textit{sprint} se procederá a construir el intermediario entre la interfaz y la base de datos. Lo llamaremos controlador, es decir, la API REST. Además, se implementaran tests que este controlador deberá de superar, así se confirma su correcto funcionamiento antes del montaje final. En esta fase conectaremos el controlador a la base de datos.
+    \item \textbf{\textit{Sprint} 4}. Esta fase está desarrollada única y enteramente al desarrollo de la interfaz. Se escribirán los tests que deben de ser superados para que la interfaz sea apta para su despliegue.
+    \item \textbf{\textit{Sprint} 5}. En la fase final se procederá a la unión de la interfaz y el controlador ya unido con la base de datos. A partir de aquí, con el sistema funcionando y testeado, procederemos a desplegarlo usando las tecnologías escogidas previamente. 
     
     Una vez la aplicación esté desplegada, se procederá a la redacción de la memoria.
 \end{itemize}
@@ -258,7 +258,7 @@ El proyecto se realizo de una forma óptima, aún cuando se materializó algún 
 
 Este problema se solucionó añadiendo en el controlador o API una librería que añadía una cabecera segura en las peticiones HTTP que se realizaban\cite{corsflask}.
 
-Avanzando acontecimientos, esta librería pertenece a Python, que es el lenguaje principal en el que hemos escrito nuestra API. Más concretamente, es una extensión de nuestro \textit{framework} Flask, llamada Flask-CORS\cite{corsflask2}.
+Avanzando acontecimientos, esta librería pertenece a Python, que es el lenguaje principal en el que hemos escrito la API. Más concretamente, es una extensión del \textit{framework} Flask, llamada Flask-CORS\cite{corsflask2}.
 
 \section{Gestión de costes}
 

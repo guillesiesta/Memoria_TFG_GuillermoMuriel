@@ -5,7 +5,7 @@ En primer lugar se abordarán las cuestiones relativas al funcionamiento de la a
 
 Una vez definida la arquitectura, se hará una búsqueda exhaustiva de las distintas tecnologías existentes que ayuden a cumplir los requisitos específicos de cada módulo que la forma, así pues se justificará la elección de la tecnología más adecuada para el desarrollo de la aplicación.
 
-Por último, abordaremos el despliegue de la aplicación. Una vez más, se procederá a hacer una búsqueda exhaustiva de las distintas tecnologías que permitirán el despliegue en la nube de cada uno de nuestros módulos diferenciados. Una vez estén definidas, se procederá a la elección de aquella alternativa que nos solucione y complete nuestros requisitos.
+Por último, abordaremos el despliegue de la aplicación. Una vez más, se procederá a hacer una búsqueda exhaustiva de las distintas tecnologías que permitirán el despliegue en la nube de cada uno de los módulos diferenciados. Una vez estén definidas, se procederá a la elección de aquella alternativa que solucione y complete los requisitos.
 
 \section{Requisitos de la aplicación}
 
@@ -35,19 +35,19 @@ Una vez definido el funcionamiento general de la aplicación, se pueden distingu
     \item Base de datos
 \end{itemize}
  
- La arquitectura \textit{MVC} (Modelo Vista Controlador) es la más adecuada para el desarrollo de este proyecto, ya que nos permite hacer una distinción de tres bloques independientes que colaborarán entre sí para formar nuestra aplicación\cite{mvc2}\cite{mvc3}. Esta arquitectura distingue los bloques\cite{mvc1}:
+ La arquitectura \textit{MVC} (Modelo Vista Controlador) es la más adecuada para el desarrollo de este proyecto, ya que nos permite hacer una distinción de tres bloques independientes que colaborarán entre sí para formar la aplicación\cite{mvc2}\cite{mvc3}. Esta arquitectura distingue los bloques\cite{mvc1}:
  
  \begin{itemize}
-    \item \textbf{Vista}. En este bloque es donde se representan los datos con los que el sistema operará. En nuestro caso, es nuestra interfaz.
-    \item \textbf{Controlador}. Este bloque será el responsable de responder a los distintos eventos en los que se solicite algún tipo de consulta al modelo, o los que se necesite un transporte de información desde el modelo a la interfaz o viceversa. En nuestro caso, será nuestra API.
-    \item \textbf{Modelo}. En este bloque se definirá el tipo de datos y su almacenamiento lógico. En nuestro caso, será nuestra base de datos.
+    \item \textbf{Vista}. En este bloque es donde se representan los datos con los que el sistema operará. En este caso, es la interfaz.
+    \item \textbf{Controlador}. Este bloque será el responsable de responder a los distintos eventos en los que se solicite algún tipo de consulta al modelo, o los que se necesite un transporte de información desde el modelo a la interfaz o viceversa. En este será la API.
+    \item \textbf{Modelo}. En este bloque se definirá el tipo de datos y su almacenamiento lógico. En este caso, será la base de datos.
 \end{itemize}
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=11cm]{figuras/mvc.png}}
     \caption{Arquitectura Modelo-Vista-Controlador}
     \label{fig::mvc}
 \end{figure}
-Cada bloque de nuestra arquitectura se abordará de manera independiente, teniendo muy en cuenta, que éstos, una vez definidos y desarrollados, tendrán que estar conectados para así permitir el flujo de información correspondiente a los eventos por parte de los requisitos del usuario. 
+Cada bloque de la arquitectura se abordará de manera independiente, teniendo muy en cuenta, que éstos, una vez definidos y desarrollados, tendrán que estar conectados para así permitir el flujo de información correspondiente a los eventos por parte de los requisitos del usuario. 
 
 En la imagen \ref{fig::mvc} se pueden contemplar los tres bloques que forman la arquitectura \textit{MVC}.
 
@@ -55,7 +55,7 @@ En la imagen \ref{fig::mvc} se pueden contemplar los tres bloques que forman la 
  
 \section{Tecnologías a emplear}
 
-Comenzaremos definiendo las posibles tecnologías que encontramos para desarrollar cada uno de los bloques de nuestra aplicación. Para escoger las tecnologías a emplear, nos basaremos en los requerimientos de la aplicación y nuestra propia intuición como desarrolladores.
+Comenzaremos definiendo las posibles tecnologías que encontramos para desarrollar cada uno de los bloques de la aplicación. Para escoger las tecnologías a emplear, nos basaremos en los requerimientos de la aplicación y la propia intuición como desarrolladores.
 
 \subsection{Tecnologías de desarrollo}
 
@@ -65,7 +65,7 @@ Inicialmente se hará una búsqueda de las distintas tecnologías para el desarr
 
 En el mercado podemos encontrar dos tipos distintos de bases de datos: relacionales y no relacionales\cite{tipobd}. 
 
-Para el desarrollo de nuestro proyecto, estamos buscando una base de datos que sea intuitiva y sencilla de administrar. Es fundamental encontrar una base de datos que administre eficientemente unos datos de una manera distinta a la visión de "tabla" que nos ofrecen las bases de datos relacionales. Es por ello que se ha escogido una base de datos \textbf{no relacional} para el almacenamiento de los datos de la aplicación.
+Para el desarrollo del proyecto, se busca una base de datos que sea intuitiva y sencilla de administrar. Es fundamental encontrar una base de datos que administre eficientemente unos datos de una manera distinta a la visión de "tabla" que nos ofrecen las bases de datos relacionales. Es por ello que se ha escogido una base de datos \textbf{no relacional} para el almacenamiento de los datos de la aplicación.
 
 Dentro de las bases de datos no relacionales encontramos distintos tipos:
 
@@ -89,15 +89,15 @@ Dentro de las bases de datos basadas en grafos se pueden encontrar dos de las m�
 \end{itemize}
 
 
-Para nuestra base de datos buscamos la sencillez, la simplicidad y el uso de un único proceso que actúe como servidor e interfaz gráfica de una base de datos intuitiva. La facilidad de instalación y manejo de \textbf{Neo4j} la han convertido en la candidata ideal para nuestra aplicación.  Además es importante tener en cuenta la facilidad a la hora de conectar con cualquier API y escalar conforme el tamaño de la base de datos aumente, la posibilidad de hacer copias de seguridad en local y, sobre todo, la aparición de Cypher como lenguaje de consulta\cite{neovstitan}.
+Para la base de datos buscamos la sencillez, la simplicidad y el uso de un único proceso que actúe como servidor e interfaz gráfica de una base de datos intuitiva. La facilidad de instalación y manejo de \textbf{Neo4j} la han convertido en la candidata ideal para la aplicación.  Además es importante tener en cuenta la facilidad a la hora de conectar con cualquier API y escalar conforme el tamaño de la base de datos aumente, la posibilidad de hacer copias de seguridad en local y, sobre todo, la aparición de Cypher como lenguaje de consulta\cite{neovstitan}.
 
-Gracias al inmejorable\textit{online training} y la perfecta descripción de la documentación oficial de Neo4j\footnote{https://neo4j.com/graphacademy/online-training/} el aprendizaje de este concepto nuevo de bases de datos y su lenguaje de consulta ha sido un proceso sencillo de llevar a cabo.
+Gracias al inmejorable \textit{online training} y la perfecta descripción de la documentación oficial de Neo4j\footnote{https://neo4j.com/graphacademy/online-training/} el aprendizaje de este concepto nuevo de bases de datos y su lenguaje de consulta ha sido un proceso sencillo de llevar a cabo.
 
-El uso de Cypher\footnote{https://neo4j.com/developer/cypher-query-language/} como lenguaje de consulta ha facilitado notablemente la elección de esta base de datos, pues gracias a éste solamente tenemos que tener en cuenta nodos y relaciones que hay entre ellos. Con una serie de órdenes simples podemos gestionar excesivamente rápida e intuitivamente toda la información que necesitemos para el funcionamiento de nuestra aplicación.
+El uso de Cypher\footnote{https://neo4j.com/developer/cypher-query-language/} como lenguaje de consulta ha facilitado notablemente la elección de esta base de datos, pues gracias a éste solamente tenemos que tener en cuenta nodos y relaciones que hay entre ellos. Con una serie de órdenes simples podemos gestionar excesivamente rápida e intuitivamente toda la información que necesitemos para el funcionamiento de la aplicación.
 
 \subsubsection{Controlador - API REST}
 
-Para que nuestra API sea sencilla de implementar, usando un lenguaje simple, de alto nivel y con un inicio sencillo a la hora del aprendizaje, libre y con una documentación extensa y infinitud de librerías podemos escoger, podemos distinguir varios lenguajes actuales y de los más utilizados para la creación de servicios REST\cite{apirest1}\cite{apirest2}\cite{apirest3}:
+Para que la API sea sencilla de implementar, usando un lenguaje simple, de alto nivel y con un inicio sencillo a la hora del aprendizaje, libre y con una documentación extensa y infinitud de librerías podemos escoger, podemos distinguir varios lenguajes actuales y de los más utilizados para la creación de servicios REST\cite{apirest1}\cite{apirest2}\cite{apirest3}:
 
 \begin{itemize}
     \item Javascript - Nodejs
@@ -118,17 +118,17 @@ Una vez decidido el lenguaje, existen dos alternativas bien diferenciadas a la h
     \item Django\footnote{https://www.djangoproject.com/}
 \end{itemize}
 
-Una vez estudiadas las características principales de cada alternativa\cite{flaskvsdjango1} , y puesto que nuestra aplicación necesitará de un gestor ligero que contenga solamente métodos que se llamarán desde nuestra interfaz e interactúen con la base de datos, descartamos la opción de usar Django, pues éste es demasiado pesado y tiene añadida la gran dificultad de comprender la estructura con la que funciona. Éste es justo lo contrario que Flask, una herramienta simple de entender y que con poco tiempo de estudio se es apto para desarrollar una API que cumpla los requisitos de nuestra aplicación. 
+Una vez estudiadas las características principales de cada alternativa\cite{flaskvsdjango1} , y puesto que la aplicación necesitará de un gestor ligero que contenga solamente métodos que se llamarán desde la interfaz e interactúen con la base de datos, descartamos la opción de usar Django, pues éste es demasiado pesado y tiene añadida la gran dificultad de comprender la estructura con la que funciona. Éste es justo lo contrario que Flask, una herramienta simple de entender y que con poco tiempo de estudio se es apto para desarrollar una API que cumpla los requisitos de la aplicación. 
 
-Nuestra API, por lo tanto estará escrita en \textbf{Python} y para el desarrollo del servicio se usará el \textit{framework} \textbf{Flask}.
+la API, por lo tanto estará escrita en \textbf{Python} y para el desarrollo del servicio se usará el \textit{framework} \textbf{Flask}.
 
 \subsubsection{Vista - Interfaz}
 \label{sec::analisis_vistaInterfaz}
 Existen infinidad de \textit{frameworks} y lenguajes a la hora de desarrollar una interfaz web. Con la idea de querer implementar una interfaz que sea interactiva y ligera, se busca un lenguaje que permita el desarrollo de una web básica, con un ligero aspecto de red social, ya que se busca en todo momento, que el usuario se enganche a la aplicación. Para ello es fundamental el uso de una interfaz fácil de utilizar.
 
-Para la búsqueda de este \textit{framework} se ha tenido muy en cuenta, primero que el lenguaje que lo soporte sea sencillo, rápido, muy bien documentado, con muchas librerías adicionales, soportado en el máximo de navegadores y, que se puedan llegar a cumplir todos los requerimientos que la interfaz necesita, como por ejemplo, la capacidad de realizar peticiones HTTP a nuestra API o controlador.
+Para la búsqueda de este \textit{framework} se ha tenido muy en cuenta, primero que el lenguaje que lo soporte sea sencillo, rápido, muy bien documentado, con muchas librerías adicionales, soportado en el máximo de navegadores y, que se puedan llegar a cumplir todos los requerimientos que la interfaz necesita, como por ejemplo, la capacidad de realizar peticiones HTTP a la API o controlador.
 
-Todos estos motivos nos hacen decantarnos por \textbf{javascript} como el lenguaje principal para esta interfaz. Además, este lenguaje nos proporciona diferentes \textit{frameworks} para el desarrollo de nuestra interfaz\cite{framework}:
+Todos estos motivos nos hacen decantarnos por \textbf{Javascript} como el lenguaje principal para esta interfaz. Además, este lenguaje nos proporciona diferentes \textit{frameworks} para el desarrollo de la interfaz\cite{framework}:
 
 \begin{itemize}
     \item AngularJS\footnote{https://angularjs.org/}
@@ -142,7 +142,7 @@ Al estudiar en profundidad las características de cada uno\cite{framework2}, se
 
 ReactJS tiene como inconveniente la curva de aprendizaje pues puede ser un poco complicado al principio. Sin embargo, gracias a la buena documentación y a los tutoriales a los que podemos acceder a través de la web oficial, y sobre todo, gracias a la gran comunidad que está apareciendo sobre este \textit{framework}, se garantiza la alta probabilidad de alcanzar los objetivos en el período de tiempo estimado.
 
-Un \textit{framework} como ReactJS está basado en la creación de componentes y su reutilización. Esto es de gran ayuda pues en nuestra aplicación aparecerán distintos datos en pantalla, todos esto apoyados en una misma estructura visual que se mantendrá fija salvo, obviamente, que se solicite la muestra de información específica.
+Un \textit{framework} como ReactJS está basado en la creación de componentes y su reutilización. Esto es de gran ayuda pues en la aplicación aparecerán distintos datos en pantalla, todos esto apoyados en una misma estructura visual que se mantendrá fija salvo, obviamente, que se solicite la muestra de información específica.
 
 \subsection{Tecnologías de despliegue}
 
@@ -162,7 +162,7 @@ Para la realización de este proyecto se usarán \textbf{PaaS} y \textbf{SaaS}.
 
 \subsubsection{Vista - Interfaz}
 
-En el mercado nos podemos encontrar diversos PaaS donde poder alojar y desplegar nuestro servicio, con infinidad de posibilidades para desplegar:
+En el mercado nos podemos encontrar diversos PaaS donde poder alojar y desplegar el servicio, con infinidad de posibilidades para desplegar:
 
 \begin{itemize}
     \item OpenShift\footnote{https://www.openshift.com/} 
@@ -171,25 +171,25 @@ En el mercado nos podemos encontrar diversos PaaS donde poder alojar y desplegar
     \item Zeit\footnote{https://zeit.co/now}
 \end{itemize}
 
-En nuestro caso, para  el despliegue de la interfaz se ha usado \textbf{Heroku}\footnote{https://dashboard.heroku.com/}.
+En este caso, para  el despliegue de la interfaz se ha usado \textbf{Heroku}\footnote{https://dashboard.heroku.com/}.
 
-Esta plataforma nos ofrece la posibilidad de enlazar nuestro repositorio en GitHub con Heroku y automatizar proceso de despliegue con un simple comando. Es por ello que esta plataforma es la idónea, pues en este proyecto se busca exhaustivamente la automatización de procesos como el despliegue y la verificación.Además, esta plataforma está especialmente orientada a despliegues de proyectos no muy extensos, como es el caso.\cite{herokuvs}
+Esta plataforma nos ofrece la posibilidad de enlazar  repositorio en GitHub con Heroku y automatizar proceso de despliegue con un simple comando. Es por ello que esta plataforma es la idónea, pues en este proyecto se busca exhaustivamente la automatización de procesos como el despliegue y la verificación. Además, esta plataforma está especialmente orientada a despliegues de proyectos no muy extensos, como es el caso.\cite{herokuvs}
 
 \subsubsection{Controlador - API}
 
-Destacando otra vez la facilidad y automatización del despliegue. \textbf{Zeit}\footnote{https://zeit.co/now} es un PaaS que nos ofrece una herramienta llamada \textbf{Now} que nos hace increíblemente cómodo el despliegue de nuestra API.
+Destacando otra vez la facilidad y automatización del despliegue. \textbf{Zeit}\footnote{https://zeit.co/now} es un PaaS que nos ofrece una herramienta llamada \textbf{Now} que nos hace increíblemente cómodo el despliegue de la API.
 
-Zeit nos permite desplegar nuestra API de manera automática, con solo un comando: \textit{now}. Adicionalmente se necesitaría un archivo en el que se especifique el entorno de nuestra aplicación, esto es, por ejemplo:
+Zeit nos permite desplegar la API de manera automática, con solo un comando: \textit{now}. Adicionalmente se necesitaría un archivo en el que se especifique el entorno de la aplicación, esto es, por ejemplo:
 
 \begin{itemize}
     \item Lenguaje utilizado.
     \item Librerías a instalar que utiliza el servicio.
-    \item Puerto por el que se transmitirá información. En nuestro caso, solamente realizaremos peticiones HTTP, por lo que el puerto será el 80.
-    \item Localización de nuestro ejecutable y comando para ejecutarlo.
+    \item Puerto por el que se transmitirá información. En este caso, solamente realizaremos peticiones HTTP, por lo que el puerto será el 80.
+    \item Localización del ejecutable y comando para ejecutarlo.
 \end{itemize}
 
 \subsubsection{Modelo - Base de datos basada en grafos}
 
-En este apartado no se encuentran tantas alternativas para el despliegue en la nube de una base de datos basada en grafos. La propia documentación de Neo4j (nuestra base de datos escogida) nos recomienda \textbf{GrapheneDB}\footnote{https://www.graphenedb.com/} como SaaS donde almacenar nuestra base de datos.
+En este apartado no se encuentran tantas alternativas para el despliegue en la nube de una base de datos basada en grafos. La propia documentación de Neo4j (la base de datos escogida) nos recomienda \textbf{GrapheneDB}\footnote{https://www.graphenedb.com/} como SaaS donde almacenar la base de datos.
 
 Es una decisión rotundamente acertada. Es muy sencillo el uso para la creación de una base de datos basada en grafos en dicha plataforma.

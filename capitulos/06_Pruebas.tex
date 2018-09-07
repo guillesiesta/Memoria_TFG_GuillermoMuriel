@@ -18,7 +18,14 @@ Travis necesita de un archivo de configuración \textit{.travis.yml}\footnote{ht
 
 \section{Pruebas en \textit{back-end} - API}
 
-Para el correcto funcionamiento de la API se ha usado la librería Pytest\footnote{https://docs.pytest.org/en/latest/} y su plugin para flask\footnote{https://pytest-flask.readthedocs.io/en/latest/}.
+Actualmente, en el mercado nos encontramos con infinidad de librerías para el desarrollo de tests en Python. Dos de las más destacadas son:
+
+\begin{itemize}
+    \item Unittest\footnote{https://docs.python.org/2/library/unittest.html}
+    \item Pytest\footnote{https://docs.pytest.org/en/latest/} 
+\end{itemize}
+
+Para el correcto funcionamiento y \textit{testeo} de la API se ha potado por el uso de la librería \textbf{Pytest} y su plugin para Flask\footnote{https://pytest-flask.readthedocs.io/en/latest/}. Pues la comodidad que ésta nos ofrecía a la hora de implementarla y el sencillo uso de la misma (todo el test alojado en un mismo archivo), además de su extensa documentación, han resultado fundamentales para su elección\cite{pytestvsunittest}.
 
 Esta herramienta permite la realización de tests unitarios. Para cada función de la API se ha realizado el siguiente testeo:
 
@@ -39,11 +46,23 @@ Se puede acceder al código de todos los tests definidos en el repositorio de Gi
 
 \section{Pruebas en \textit{front-end}}
 
-Para testear la interfaz se ha usado Jest\footnote{https://jestjs.io/} junto con Enzyme\footnote{https://github.com/airbnb/enzyme}. Esta recomendación para el testeo viene dada por la propia documentación de ReactJS\cite{testreact}.
+Para la realización de tests unitarios en Javascript existen también infinidad de herramientas. Las más destacables que encontramos son:
+
+\begin{itemize}
+    \item Jest\footnote{https://jestjs.io/}
+    \item VenusJS\footnote{https://mochajs.org/}
+    \item Mocha\footnote{https://mochajs.org/}
+    \item PhantomJS\footnote{http://phantomjs.org/}
+    \item Jasmine\footnote{https://jasmine.github.io/2.4/introduction.html}
+\end{itemize}
+
+Las diferencias entre unos y otros son mínimas. Es por ello que para decidir cual de las herramientas anteriores es la adecuada, se ha accedido a consultar el manual oficial de ReactJS\footnote{https://reactjs.org/docs/test-utils.html} para el \textit{testeo} de una aplicación desarrollada con su propia tecnología. 
+
+Una vez consultado en profundidad, se ha decidido que para testear la interfaz se usará Jest\footnote{https://jestjs.io/} junto con Enzyme\footnote{https://github.com/airbnb/enzyme}. Esta combinación de herramientas viene confirmada como la mejor alternativa en la propia documentación de ReactJS\cite{testreact}.
 
 La idea principal para las pruebas es comprobar que cada componente creado en ReactJS se renderiza de manera correcta. Para ello gracias a Enzyme, se puede crear un \textit{snapshot} o instantánea de ese componente antes de renderizar, y una vez se renderice, se comprueba que el componente está creado de la manera esperada\cite{testreact2}.
 
-Dicho de otra manera: se le dice a Jest que se quiere estar seguro de que la salida de este componente nunca debe cambiar accidentalmente y Jest, con ayuda de Enzyme la guarda en un archivo, y después comprueba que el componente no ha sido cambiado una vez se renderice.
+Dicho de otra manera: se le dice a Jest que se quiere estar seguro de que la salida de este componente nunca debe cambiar accidentalmente y Jest, con ayuda de Enzyme la guarda en un archivo, y después comprueba que el componente no ha sido modificado una vez se renderice.
 
 \section{Validación}
 

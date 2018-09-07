@@ -162,13 +162,22 @@ Para la realización de este proyecto se usarán \textbf{PaaS} y \textbf{SaaS}.
 
 \subsubsection{Vista - Interfaz}
 
-En el mercado nos podemos encontrar diversos PaaS donde poder alojar y desplegar nuestro servicio, con infinidad de posibilidades para desplegar. En nuestro caso, para  el despliegue de la interfaz se ha usado \textbf{Heroku}\footnote{https://dashboard.heroku.com/}.
+En el mercado nos podemos encontrar diversos PaaS donde poder alojar y desplegar nuestro servicio, con infinidad de posibilidades para desplegar:
 
-Esta plataforma nos ofrece la posibilidad de enlazar nuestro repositorio en GitHub con Heroku y automatizar proceso de despliegue con un simple comando. Es por ello que esta plataforma es la idónea, pues en este proyecto se busca exhaustivamente la automatización de procesos como el despliegue y la verificación.
+\begin{itemize}
+    \item OpenShift\footnote{https://www.openshift.com/} 
+    \item DigitalOCean\footnote{https://www.digitalocean.com/}
+    \item Heroku\footnote{https://www.heroku.com/}
+    \item Zeit\footnote{https://zeit.co/now}
+\end{itemize}
+
+En nuestro caso, para  el despliegue de la interfaz se ha usado \textbf{Heroku}\footnote{https://dashboard.heroku.com/}.
+
+Esta plataforma nos ofrece la posibilidad de enlazar nuestro repositorio en GitHub con Heroku y automatizar proceso de despliegue con un simple comando. Es por ello que esta plataforma es la idónea, pues en este proyecto se busca exhaustivamente la automatización de procesos como el despliegue y la verificación.Además, esta plataforma está especialmente orientada a despliegues de proyectos no muy extensos, como es el caso.\cite{herokuvs}
 
 \subsubsection{Controlador - API}
 
-Destacando otra vez la facilidad y automatización del despliegue. \textbf{Zeit}\footnote{https://zeit.co/now} nos ofrece una herramienta llamada \textbf{Now} que nos hace increíblemente cómodo el despliegue de nuestra API.
+Destacando otra vez la facilidad y automatización del despliegue. \textbf{Zeit}\footnote{https://zeit.co/now} es un PaaS que nos ofrece una herramienta llamada \textbf{Now} que nos hace increíblemente cómodo el despliegue de nuestra API.
 
 Zeit nos permite desplegar nuestra API de manera automática, con solo un comando: \textit{now}. Adicionalmente se necesitaría un archivo en el que se especifique el entorno de nuestra aplicación, esto es, por ejemplo:
 
